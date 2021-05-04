@@ -1,0 +1,71 @@
+body
+{
+ margin: 0px;
+}
+#sidebar
+{
+  float: right;
+  margin-top:-10px;
+}
+.button{
+  background-color:  	#f0ffff;
+  border-style:none;
+  padding:10px;
+  width:100px;
+}
+.button:active{
+  box-shadow: inset 0 0 30px #deb887;
+}
+.button:hover
+{
+background-color:  #f5f5dc;
+}
+#button2
+{
+  border-bottom-left-radius:20%;
+}
+#title
+{
+  height:900px;
+background-image:url("https://a.travel-assets.com/findyours-php/viewfinder/images/res40/35000/35388.jpg");
+background-attachment: scroll;
+background-repeat: no-repeat;
+background-size: 100% 900px;
+}
+h1
+{
+  margin:0px;
+}
+#Sicilypost
+{
+ text-align: center;
+ position: absolute;
+ top: 40%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ color: #fff8dc;
+ font-size:90px;
+}
+#Sicilypost>h1>spam
+{
+  color:black;
+}
+#content
+{
+  background-color: #f5f5dc;
+ display:flex;
+}
+#contenuto1
+{
+  width:50%;
+  height:500px;
+  border-style:solid;
+  border-color:black;
+}
+#contenuto2
+{
+  width:50%;
+  height:500px;
+  border-style:solid;
+  border-color:black;
+}
