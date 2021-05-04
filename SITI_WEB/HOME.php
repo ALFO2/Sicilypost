@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Sicilypost</title>
-     <link rel="stylesheet" href="SITI_WEB/CSS/GENERALE.css">
+     <link rel="stylesheet" href="SITI_WEB/GENERALE.css">
   </head>
   <body>
 
@@ -25,13 +25,58 @@
 
     </div>
   </header>
-  <div id="content">
-    <article id="contenuto1" class="">
-      <h2>ciao</h2>
-    </article>
-    <article id="contenuto2" class="">
-     <h2>ciao</h2>
-    </article>
+  <div  class="content">
+    <div class="box-2">
+      <div  class="center_text">
+         <h2>Chi siamo</h2>
+      </div>
+      <hr>
+      <div class="">
+
+      </div>
+    </div>
+    <div class="box-2">
+      <div class="center_text">
+         <h2>I nostri servizi</h2>
+      </div>
+      <hr>
+      <div class="">
+
+      </div>
+    </div>
   </div>
+
+  <footer>
+    <div class="footer">
+      <div class="box-3">
+        <h3>Contantti</h3>
+        <ul>
+          <li>Telefono</li>
+          <li>EMAIL</li>
+          <li>Instagram</li>
+        </ul>
+      </div>
+      <div class="box-3">
+        <h3>Contantti</h3>
+        <ul>
+          <li>cite</li>
+          <li>asd</li>
+          <li>asdsa</li>
+        </ul>
+      </div>
+      <div class="box-3">
+        <h3>Contantti</h3>
+        <ul>
+          <li>cite</li>
+          <li>asd</li>
+          <li>asdsa</li>
+        </ul>
+      </div>
+    </footer>
+    </div>
+
   </body>
+  <style media="screen">
+
+  </style>
 </html>

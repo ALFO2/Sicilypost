@@ -50,22 +50,36 @@ h1
 {
   color:black;
 }
-#content
+.content
 {
   background-color: #f5f5dc;
- display:flex;
+  display:flex;
 }
-#contenuto1
+.footer
+{
+  background-color: #7c7b7b;
+  display:flex;
+}
+
+.box-2
 {
   width:50%;
-  height:500px;
-  border-style:solid;
-  border-color:black;
+  height:300px;
 }
-#contenuto2
+.box-3
 {
-  width:50%;
-  height:500px;
-  border-style:solid;
-  border-color:black;
+  width:33.33%;
+  height:200px;
+}
+.center_text
+{
+  text-align: center;
+
+}
+ul>li
+{
+ margin-bottom:3%;
+}
+ul{
+  margin-left:0%;
 }
