@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="SITI_WEB/GENERALE.css">
 <?php
  //session_start();
 //require 'Bariables/VGeneral.php';
