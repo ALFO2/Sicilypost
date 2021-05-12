@@ -42,10 +42,6 @@
   <!-- header -->
   <header>
 
-
-
-
-
     <!-- Modal -->
     <div class="modal fade row" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog  col-xl-2" id="sii" role="document">
@@ -67,7 +63,8 @@
                   <label for="exampleInputPassword1">Password</label>
                   <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 </div>
-                <button type="submit" class="btn btn-primary">Sign Up</button>
+                <button type="submit" class="btn btn-primary">Sign in</button>
+                <a href="sign-up.php">Sign up</a>
               </form>
             </div>
           </div>
@@ -84,7 +81,7 @@
               <div class="full">
                 <div class="center-desk">
                   <div class="logo">
-                    <a href="index.html"> <h1>Sicilypost</h1> </a>
+                    <a href="index.php"> <h1>Sicilypost</h1> </a>
                   </div>
                 </div>
               </div>
@@ -95,7 +92,7 @@
                 <div class="limit-box">
                   <nav class="main-menu ">
                     <ul class="menu-area-main">
-                      <li class="active"> <a href="index.html">Home</a> </li>
+                      <li class="active"> <a href="index.php">Home</a> </li>
                       <li> <a href="#about">About</a> </li>
                       <li> <a href="#testimonial">Testomonial</a> </li>
                       <li> <a href="#contact">Contact Us</a> </li>
@@ -234,7 +231,7 @@ And we ensure the safety and respect of your package</p>
       </div>
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 padding_rl">
         <div class="about-box_img">
-          <figure><img src="images/about.jpg" alt="#" /></figure>
+          <figure><img src="images/posta.jpg" alt="#" /></figure>
         </div>
       </div>
     </div>
@@ -251,26 +248,26 @@ And we ensure the safety and respect of your package</p>
     <div class="row">
       <div class="col-md-12">
         <div  class="titlepage">
-          <h2> Fresh <strong class="llow">vegetable</strong> </h2>
+          <h2> Pick up  <strong class="llow">at home</strong> </h2>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 ">
         <div class="vegetable_shop">
-          <h3>Best Vegetables Shop</h3>
+          <h3>Best service</h3>
           <p></p>
         </div>
       </div>
        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 ">
         <div class="vegetable_img">
-         <figure><img src="images/v1.jpg" alt="#"/></figure>
+         <figure><img src="https://store.webgriffe.com/media/catalog/product/cache/1/image/500x/9df78eab33525d08d6e5fb8d27136e95/e/x/extension_ritiro.png" alt="#"/></figure>
          <span>01</span>
         </div>
       </div>
        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 ">
         <div class="vegetable_img margin_top">
-         <figure><img src="images/v2.jpg" alt="#"/></figure>
+         <figure><img src="https://cdn2.hubspot.net/hubfs/4052981/ritiro%20e%20consegna%20pacchi%20a%20domicilio%20cop%20ok.jpg" alt="#"/></figure>
          <span>02</span>
         </div>
       </div>
@@ -312,15 +309,14 @@ And we ensure the safety and respect of your package</p>
                                 <div class="row">
                                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 pa_right">
                                         <div class="testomonial_img">
-                                            <figure><img src="images/tes.jpg" alt="#"/></figure>
+                                            <figure><img src="https://png.pngtree.com/png-vector/20190223/ourlarge/pngtree-profile-line-black-icon-png-image_691051.jpg" alt="#"/></figure>
                                             <i><img src="images/test_con.png" alt="#"/></i>
                                         </div>
                                     </div>
                                     <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 pa_left">
                                         <div class="cross_inner">
-                                            <h3>Jomono<br><strong class="ornage_color">review</strong></h3>
-                                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and
-
+                                            <h3>Pino il bello<br><strong class="ornage_color">review</strong></h3>
+                                            <p>
                                             </p>
 
                                         </div>
@@ -339,15 +335,14 @@ And we ensure the safety and respect of your package</p>
                                 <div class="row">
                                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 pa_right">
                                         <div class="testomonial_img">
-                                            <figure><img src="images/tes.jpg" alt="#"/></figure>
+                                            <figure><img src="https://png.pngtree.com/png-vector/20190223/ourlarge/pngtree-profile-line-black-icon-png-image_691051.jpg" alt="#"/></figure>
                                             <i><img src="images/test_con.png" alt="#"/></i>
                                         </div>
                                     </div>
                                     <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 pa_left">
                                         <div class="cross_inner">
-                                            <h3>Jomono<br><strong class="ornage_color">review</strong></h3>
-                                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and
-
+                                            <h3>Pino il bello<br><strong class="ornage_color">review</strong></h3>
+                                            <p>
                                             </p>
 
                                         </div>
@@ -367,15 +362,14 @@ And we ensure the safety and respect of your package</p>
                                 <div class="row">
                                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 pa_right">
                                         <div class="testomonial_img">
-                                            <figure><img src="images/tes.jpg" alt="#"/></figure>
+                                            <figure><img src="https://png.pngtree.com/png-vector/20190223/ourlarge/pngtree-profile-line-black-icon-png-image_691051.jpg" alt="#"/></figure>
                                             <i><img src="images/test_con.png" alt="#"/></i>
                                         </div>
                                     </div>
                                     <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 pa_left">
                                         <div class="cross_inner">
-                                            <h3>Jomono<br><strong class="ornage_color">review</strong></h3>
-                                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and
-
+                                            <h3>Pino il bello<br><strong class="ornage_color">review</strong></h3>
+                                            <p>
                                             </p>
 
                                         </div>
@@ -397,56 +391,7 @@ And we ensure the safety and respect of your package</p>
 
 
 <!-- contact -->
-<div id="contact" class="contact">
-  <div class="container">
-   <div class="row">
-     <div class="col-md-12">
-                <div class="titlepage">
-                  <h2>Contact <strong class="llow">us</strong></h2>
-                </div>
-   </div>
 
-</div>
-    <div class="white_color">
-      <div class="row">
-
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-           <form class="contact_bg">
-            <div class="row">
-              <div class="col-md-12">
-
-                <div class="col-md-12">
-                  <input class="contactus" placeholder="Your Name" type="text" name="Your Name">
-                </div>
-                <div class="col-md-12">
-                  <input class="contactus" placeholder="Email" type="text" name="Email">
-                </div>
-                <div class="col-md-12">
-                  <input class="contactus" placeholder="Phone Number" type="text" name="Phone Number">
-                </div>
-                <div class="col-md-12">
-                  <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
-                </div>
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                  <button class="send">Send</button>
-                </div>
-              </div>
-            </form>
-          </div>
-            </div>
-
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-<div id="map">
-          </div>
-           </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-</div>
-</div>
-    <!-- end contact -->
 
     <!--  footer -->
     <footr>
@@ -502,7 +447,7 @@ And we ensure the safety and respect of your package</p>
               </div>
               <div class="copyright">
                 <div class="container">
-                  <p>Copyright © 2019 Design by <a href="https://html.design/">Free Html Templates </a></p>
+                  <p>Copyright © 2021<a href=""> </a></p>
                 </div>
               </div>
             </div>
