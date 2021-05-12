@@ -1,3 +1,6 @@
+<?php session_start();
+require 'funtion/function.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,25 +48,38 @@
     <!-- Modal -->
     <div class="modal fade row" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog  col-xl-2" id="sii" role="document">
-        <div class="modal-content ">
+        <div class="modal-content " style="height:700px;">
           <div class=" ">
             <div class="column " id="main">
               <h1 id="textm">Sign Up </h1>
               <h3 id="textm">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-              <form>
+              <form method="post" >
                 <div class="form-group">
                   <label for="exampleInputName">Name</label>
-                  <input type="name" class="form-control" id="exampleInputName" placeholder="Name">
+
+
+                  <input type="text" id="nome" oninput="myFunction()" name="nome" class="form-control"  placeholder="Name">
+
+
+                  <p id="enome"></p>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">E-mail </label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail">
+
+                <label for="exampleInputEmail1">E-mail </label>
+
+
+
+                  <input type="email" id="ema" oninput="myFunction()" name="email" class="form-control"  aria-describedby="emailHelp" placeholder="E-mail">
+
+
+                  <p id="eemail"></p>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <input type="password" id="pass" oninput="myFunction()" name="password" class="form-control"  placeholder="Password">
+                  <p id="epass"></p>
                 </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                <button type="submit" id="sign"  name="signin" class="btn btn-primary">Sign in</button>
                 <a href="sign-up.php">Sign up</a>
               </form>
             </div>
@@ -71,6 +87,110 @@
         </div>
       </div>
     </div>
+
+
+    <script>
+
+    function validazione(inputtxt,tipo)
+    {
+     switch (tipo) {
+       case "password":
+       var passw=  /^[A-Za-z]\w{7,20}$/;
+             if(inputtxt.value == "") {
+           return 0;
+        }
+
+ //minimum password length validation
+        if(inputtxt.value.length < 8) {
+           return 0;
+        }
+        if(inputtxt.value.match(passw))
+       {
+       return 1;
+       }
+       else
+       {
+       return 0;
+       }
+         break;
+
+       case "nome":
+       if(inputtxt.value == "") {
+       return 0;
+       }
+
+       //minimum password length validation
+       if(inputtxt.value.length < 2) {
+       return 0;
+       }
+       if(inputtxt.value.match(/[1-9]/g))
+      {
+      return 0;
+      }
+      else
+      {
+      return 1;
+      }
+           break;
+       case "email":
+       if(inputtxt.value == "") {
+       return 0;
+       }
+       else {
+         return 1;
+       }
+
+       //minimum password length validation
+
+         break;
+      case "eta":
+
+        break;
+        return 0;
+       default:
+
+     }
+    }
+
+    document.getElementById("sign").disabled = true;
+    function myFunction() {
+
+      var x =validazione(document.getElementById("nome"),'nome');
+      var y =validazione(document.getElementById("ema"),'email');
+      var g =validazione(document.getElementById("pass"),'password');
+      var l=0;
+      var o=0;
+      var p=0;
+    if (x==1) {
+    document.getElementById("enome").innerHTML = "nome valido"  ;
+    l=1
+    }else {
+    document.getElementById("enome").innerHTML = "nome non valido"  ;
+    document.getElementById("sign").disabled = true;
+    l=0;
+    }
+    if (y==1) {
+      document.getElementById("eemail").innerHTML = null  ;
+    o=1;
+    }else {
+    document.getElementById("eemail").innerHTML = "email non valida"  ;
+    document.getElementById("sign").disabled = true;
+    o=0;
+    }
+    if (g==1) {
+      document.getElementById("epass").innerHTML = "password valida" ;
+      p=1;
+    }else {
+    document.getElementById("epass").innerHTML = "password non valido"  ;
+    document.getElementById("sign").disabled = true;
+     p=0;
+    }
+     f=p+o+l;
+     if (f==3) {
+         document.getElementById("sign").disabled = false;
+     }
+    }
+    </script>
 
     <!-- header inner -->
     <div class="header-top">
@@ -91,13 +211,14 @@
                <div class="menu-area">
                 <div class="limit-box">
                   <nav class="main-menu ">
-                    <ul class="menu-area-main">
+                    <ul class="menu-area-main" style="height: 235px;">
                       <li class="active"> <a href="index.php">Home</a> </li>
                       <li> <a href="#about">About</a> </li>
                       <li> <a href="#testimonial">Testomonial</a> </li>
                       <li> <a href="#contact">Contact Us</a> </li>
+                      <li> <a href="Profilo.php">Profile</a> </li>
                         <li><a href="#"data-toggle="modal" data-target="#exampleModal">Sign Up </a> </li>
-                     <li> <a href="#"><img src="icon/icon_b.png" alt="#" /></a></li>
+                     <li> <a href="index.php"><img src="icon/icon_b.png" alt="#" /></a></li>
                      </ul>
                    </nav>
                  </div>
@@ -399,7 +520,7 @@ And we ensure the safety and respect of your package</p>
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-             <a href="#" class="logo_footer"> <img src="images/logo2.png" alt="#"/></a>
+             <a href="#" class="logo_footer"> <h1 style="color: #fff;">SicilyPost</h1></a>
             </div>
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
               <div class="row">
@@ -432,11 +553,7 @@ And we ensure the safety and respect of your package</p>
 
                       <div class="col-lg-4 col-md-6 col-sm-6 ">
                         <div class="address">
-                          <h3>Newsletter</h3>
-                           <form class="news">
-                           <input class="newslatter" placeholder="Enter your email" type="text" name=" Enter your email">
-                            <button class="submit">Subscribe</button>
-                            </form>
+
                         </div>
                       </div>
                     </div>
@@ -447,7 +564,7 @@ And we ensure the safety and respect of your package</p>
               </div>
               <div class="copyright">
                 <div class="container">
-                  <p>Copyright © 2021<a href=""> </a></p>
+                  <p>Copyright © 2021<a href="">Paul Alarcon</a></p>
                 </div>
               </div>
             </div>
@@ -468,6 +585,7 @@ And we ensure the safety and respect of your package</p>
           <script>
 // This example adds a marker to indicate the position of Bondi Beach in Sydney,
 // Australia.
+
 function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 11,

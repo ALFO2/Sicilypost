@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,6 +31,7 @@
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+
 </head>
 <!-- body -->
 
@@ -43,7 +45,37 @@
   <header>
 
     <!-- Modal -->
-    
+
+    <div class="modal fade row" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog  col-xl-2" id="sii" role="document">
+        <div class="modal-content ">
+          <div class=" ">
+            <div class="column " id="main">
+              <h1 id="textm">Sign Up </h1>
+              <h3 id="textm">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputName">Name</label>
+                  <input type="text" class="form-control" id="exampleInputName" placeholder="Name">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">E-mail </label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control"    placeholder="Password">
+                </div>
+                <div class="">
+                </div>
+                <button type="submit" class="btn btn-primary">Sign in</button>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- header inner -->
     <div class="header-top">
@@ -78,15 +110,19 @@
      </div>
      <!-- end header inner -->
 
- 
-    
-      
-        <div class=" ">
-          
+
+
             <div class="column " id="main">
               <h1 id="textm">Sign Up </h1>
-              <h3 id="textm">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-              <form>
+              <h3 id="textm">Welcome to SicilyPost ; ) we're here for you</h3>
+              <?php
+
+              if (!isset($_POST['next'])) {
+                // code...
+                // code...
+              ?>
+              <form method="post">
+                  <hr>
                 <div class="form-group">
                   <label for="exampleInputName">Name</label>
                   <input type="name" class="form-control" id="exampleInputName" placeholder="Name">
@@ -96,13 +132,18 @@
                   <input type="name" class="form-control" id="exampleInputName" placeholder="Lastname">
                 </div>
                 <div class="form-group">
+                  <label for="exampleInputName">Fiscal Code</label>
+                  <input type="name" class="form-control" id="exampleInputName" placeholder="Fiscal Code">
+                </div>
+                <div class="form-group ">
                   <label for="exampleInputName">Age</label>
-                  <input type="number" class="form-control" id="exampleInputName" placeholder="Age">
+                  <input style="width:20%;" onkeypress='validate(event)' type="text"  value="0" min="0" class="form-control num" id="exampleInputName" placeholder="0">
                 </div>
                 <div class="form-group">
-              <input type="radio" name="radiogroup1" id="rd1">
-              <label for="rd1">Male</label>
-               <input type="radio" name="radiogroup1" id="rd2">
+                  <label for="exampleInputName">sex</label><br>
+              <input type="radio" name="radiogroup1" value="male"id="rd1">
+              <label for="rd1" >Male</label>
+               <input type="radio" name="radiogroup1" value="female" id="rd2">
                 <label for="rd2">Female</label>
               </div>
                 <div class="form-group">
@@ -112,15 +153,63 @@
 
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <input type="password" class="form-control" id="pass"  placeholder="Password">
                 </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Confirmation Password</label>
+                  <input type="password" class="form-control" id="pass"   placeholder="Confirmation Password">
+                </div>
+                <div class="">
+                <div class="round">
+
+                <input type="checkbox" id="checkbox" onclick="sewpass()"/> &nbsp; Show Password
+                <label for="checkbox"></label>
+                </div>
+                </div>
+
+                <button type="submit" name="next" class="btn btn-primary">Next </button>
+              </form>
+                 <?php }
+
+                 else {
+                   // code...
+                 ?>
+
+                    <hr>
+              <form class="" method="post">
+                <div class="form-group">
+                  <label for="exampleInputName">city</label>
+                  <input type="name" class="form-control" id="exampleInputName" placeholder="city">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputName">address</label>
+                  <input type="name" class="form-control" id="exampleInputName" placeholder="address">
+                </div>
+                <div class="form-group ">
+                  <label for="exampleInputName">House number</label>
+                  <input style="width:20%;" onkeypress='validate(event)' type="text"  value="0" min="0" class="form-control num" id="exampleInputName" placeholder="0">
+                </div>
+                <div class="form-group">
+                  <div class="form-group ">
+                    <label for="exampleInputName">CAP</label>
+                    <input style="width:20%;" onkeypress='validate(event)' type="text"  value="0" min="0" class="form-control num" id="exampleInputName" placeholder="2..">
+                  </div>
+
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Region</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Region">
+                </div>
+
                 <button type="submit" class="btn btn-primary">Sign Up</button>
-                <a href="sign-up.php">Sing in</a>
+              <?php } ?>
+                  <a href="sign-in.phph" data-toggle="modal" data-target="#exampleModal">Sign Up </a>
               </form>
             </div>
-        
-        </div>
-      
+
+
+         </div>
+
+
 
 <!-- contact -->
 
@@ -131,7 +220,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-             <a href="#" class="logo_footer"> <img src="images/logo2.png" alt="#"/></a>
+             <a href="#" class="logo_footer"> <h1 style="color: #fff;">SicilyPost</h1></a>
             </div>
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
               <div class="row">
@@ -164,11 +253,7 @@
 
                       <div class="col-lg-4 col-md-6 col-sm-6 ">
                         <div class="address">
-                          <h3>Newsletter</h3>
-                           <form class="news">
-                           <input class="newslatter" placeholder="Enter your email" type="text" name=" Enter your email">
-                            <button class="submit">Subscribe</button>
-                            </form>
+
                         </div>
                       </div>
                     </div>
@@ -179,7 +264,7 @@
               </div>
               <div class="copyright">
                 <div class="container">
-                  <p>Copyright © 2021<a href=""> </a></p>
+                  <p>Copyright © 2021<a href="">Paul Alarcon</a></p>
                 </div>
               </div>
             </div>
@@ -198,6 +283,37 @@
 
 
           <script>
+
+
+
+          function sewpass() {
+            var x = document.getElementById("pass");
+            if (x.type === "password") {
+              x.type = "text";
+            } else {
+              x.type = "password";
+            }
+          }
+
+
+          function validate(evt) {
+var theEvent = evt || window.event;
+
+// Handle paste
+if (theEvent.type === 'paste') {
+ key = event.clipboardData.getData('text/plain');
+} else {
+// Handle key press
+ var key = theEvent.keyCode || theEvent.which;
+ key = String.fromCharCode(key);
+}
+var regex = /[0-9]|\./;
+if( !regex.test(key) ) {
+theEvent.returnValue = false;
+if(theEvent.preventDefault) theEvent.preventDefault();
+}
+}
+
 // This example adds a marker to indicate the position of Bondi Beach in Sydney,
 // Australia.
 function initMap() {
