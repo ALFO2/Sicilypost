@@ -61,7 +61,7 @@ require 'funtion/function.php';
                   <input type="text" id="nome" oninput="myFunction()" name="nome" class="form-control"  placeholder="Name">
 
 
-                  <p id="enome"></p>
+                  <p style="color: red;" id="enome"></p>
                 </div>
                 <div class="form-group">
 
@@ -72,12 +72,12 @@ require 'funtion/function.php';
                   <input type="email" id="ema" oninput="myFunction()" name="email" class="form-control"  aria-describedby="emailHelp" placeholder="E-mail">
 
 
-                  <p id="eemail"></p>
+                  <p style="color: red;" id="eemail"></p>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
                   <input type="password" id="pass" oninput="myFunction()" name="password" class="form-control"  placeholder="Password">
-                  <p id="epass"></p>
+                  <p style="color: red;" id="epass"></p>
                 </div>
                 <button type="submit" id="sign"  name="signin" class="btn btn-primary">Sign in</button>
                 <a href="sign-up.php">Sign up</a>
@@ -90,7 +90,6 @@ require 'funtion/function.php';
 
 
     <script>
-
     function validazione(inputtxt,tipo)
     {
      switch (tipo) {
@@ -104,6 +103,7 @@ require 'funtion/function.php';
         if(inputtxt.value.length < 8) {
            return 0;
         }
+        
         if(inputtxt.value.match(passw))
        {
        return 1;
@@ -153,16 +153,20 @@ require 'funtion/function.php';
     }
 
     document.getElementById("sign").disabled = true;
+
+
+    
     function myFunction() {
 
       var x =validazione(document.getElementById("nome"),'nome');
       var y =validazione(document.getElementById("ema"),'email');
       var g =validazione(document.getElementById("pass"),'password');
+      
       var l=0;
       var o=0;
       var p=0;
     if (x==1) {
-    document.getElementById("enome").innerHTML = "nome valido"  ;
+    document.getElementById("enome").innerHTML = null  ;
     l=1
     }else {
     document.getElementById("enome").innerHTML = "nome non valido"  ;
@@ -178,7 +182,7 @@ require 'funtion/function.php';
     o=0;
     }
     if (g==1) {
-      document.getElementById("epass").innerHTML = "password valida" ;
+      document.getElementById("epass").innerHTML = null ;
       p=1;
     }else {
     document.getElementById("epass").innerHTML = "password non valido"  ;
