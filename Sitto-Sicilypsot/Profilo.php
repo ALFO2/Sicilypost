@@ -86,9 +86,25 @@
 
 
 
+ 
+    <div class="modal " id="CreaViaggio">
+      <div class="modal-content " style="height:700px;">s
+  
+    <div class="row">
+      <div class="col-md-4">.col-md-4</div>
+      <div class="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
+    </div>
+    <div class="row">
+      <div class="col-md-3 ml-auto">.col-md-3 .ml-auto</div>
+      <div class="col-md-2 ml-auto">.col-md-2 .ml-auto</div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 ml-auto">.col-md-6 .ml-auto</div>
+    </div>
 
-
-
+</div>
+</div>
+   <a href="#"data-toggle="modal" data-target="#CreaViaggio">Sign Up </a>
 
      <!-- Navbar on small screens -->
      <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
@@ -122,15 +138,15 @@
            <!-- Accordion -->
            <div class="w3-card w3-round">
              <div class="w3-white">
-               <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i> My Groups</button>
+               <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i>Crea invio</button>
                <div id="Demo1" class="w3-hide w3-container">
                  <p>Some text..</p>
                </div>
-               <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i> My Events</button>
+               <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i>Traccia il mio pacco</button>
                <div id="Demo2" class="w3-hide w3-container">
                  <p>Some other text..</p>
                </div>
-               <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i> My Photos</button>
+               <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i>Invii</button>
                <div id="Demo3" class="w3-hide w3-container">
               <div class="w3-row-padding">
               <br>

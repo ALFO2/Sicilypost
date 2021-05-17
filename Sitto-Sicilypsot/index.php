@@ -215,7 +215,7 @@ require 'funtion/function.php';
                <div class="menu-area">
                 <div class="limit-box">
                   <nav class="main-menu ">
-                    <ul class="menu-area-main" style="height: 235px;">
+                    <ul class="menu-area-main" >
                       <li class="active"> <a href="index.php">Home</a> </li>
                       <li> <a href="#about">About</a> </li>
                       <li> <a href="#testimonial">Testomonial</a> </li>
