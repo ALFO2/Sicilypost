@@ -48,11 +48,14 @@ require 'funtion/function.php';
     <!-- Modal -->
     <div class="modal fade row" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog  col-xl-2" id="sii" role="document">
-        <div class="modal-content " style="height:700px;">
+        <div class="modal-content " id="modalcontent" style="height:700px;">
+
+
           <div class=" ">
             <div class="column " id="main">
-              <h1 id="textm">Sign Up </h1>
-              <h3 id="textm">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+
+                <h1 id="textm">Sign Up </h1>
+               <h3 id="textm">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
               <form method="post" >
                 <div class="form-group">
                   <label for="exampleInputName">Name</label>
@@ -103,7 +106,7 @@ require 'funtion/function.php';
         if(inputtxt.value.length < 8) {
            return 0;
         }
-        
+
         if(inputtxt.value.match(passw))
        {
        return 1;
@@ -155,13 +158,13 @@ require 'funtion/function.php';
     document.getElementById("sign").disabled = true;
 
 
-    
+
     function myFunction() {
 
       var x =validazione(document.getElementById("nome"),'nome');
       var y =validazione(document.getElementById("ema"),'email');
       var g =validazione(document.getElementById("pass"),'password');
-      
+
       var l=0;
       var o=0;
       var p=0;

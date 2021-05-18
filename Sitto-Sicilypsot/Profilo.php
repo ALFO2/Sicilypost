@@ -26,7 +26,12 @@
   <!-- Scrollbar Custom CSS -->
   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
   <!-- Tweaks for older IEs-->
-  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -50,6 +55,99 @@
 
 
 
+    <!-- Button trigger modal -->
+
+
+    <!-- Modal -->
+    <div class="modal fade"   id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog" style="max-width:1400px;" >
+        <div class="modal-content" >
+          <div class="modal-header">
+            <h5 class="modal-title" style="color:black;" id="staticBackdropLabel">SEGLIERE UN PACCHO PER PIU INFORMAZIONI</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="row">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+              <div class="modal-body">
+                <div class="card">
+                 <div class="card-header">
+                  Featured
+                 </div>
+                 <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                 </div>
+                </div>
+              </div>
+            </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <div class="modal-body">
+              <div class="card">
+               <div class="card-header">
+                Featured
+               </div>
+               <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+               </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <div class="modal-body">
+              <div class="card">
+               <div class="card-header">
+                Featured
+               </div>
+               <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+               </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <div class="modal-body">
+              <div class="card">
+               <div class="card-header">
+                Featured
+               </div>
+               <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+               </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <div class="modal-body">
+              <div class="card">
+               <div class="card-header">
+                Featured
+               </div>
+               <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+               </div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
     <!-- header inner -->
 <div class="header-top">
@@ -71,7 +169,7 @@
                 <div class="limit-box">
                   <nav class="main-menu ">
                     <ul class="menu-area-main" style="height: 30px;">
-                      <li class="active"> <a href="index.php">Home</a> </li>
+                      <li class=""> <a href="index.php">Home</a> </li>
                      <li> <a href="index.php"><img src="icon/icon_b.png" alt="#" /></a></li>
                      </ul>
                    </nav>
@@ -84,27 +182,97 @@
 </div>
      <!-- end header inner -->
 
+<div class="offcanvas offcanvas-bottom" style="height:700px; background-color:#ececf0; "data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+<div class="offcanvas-header">
+<h1 class="offcanvas-title" id="offcanvasScrollingLabel" >CREA CONSEGNA</h1>
+<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 
+</div>
+<hr style="border-color:#43960f; height:10px; background-color:green;">
+<div class="offcanvas-body">
+  <p>Crea il tuo invio prenotazndo l'invio o la consegna in una SO</p>
+<div class="row" style=" background-color:#fff; ">
+<div class="col-xl-6 col-md-6 col-sm-9" >
 
- 
-    <div class="modal " id="CreaViaggio">
-      <div class="modal-content " style="height:700px;">s
-  
-    <div class="row">
-      <div class="col-md-4">.col-md-4</div>
-      <div class="col-md-4 ml-auto">.col-md-4 .ml-auto</div>
-    </div>
-    <div class="row">
-      <div class="col-md-3 ml-auto">.col-md-3 .ml-auto</div>
-      <div class="col-md-2 ml-auto">.col-md-2 .ml-auto</div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 ml-auto">.col-md-6 .ml-auto</div>
-    </div>
+  <div class="row">
+
+  <div class="col-xl-6 col-md-6 col-sm-9" >
+    <div class="form-group">
+     <h1>prova 1</h1>
+     <input type="text" id="nome" oninput="myFunction()" name="nome" class="form-control"  placeholder="Name">
+    <p style="color: red;" id="enome"></p>
+   </div>
+  </div>
+
+  <div class="col-xl-6 col-md-6 col-sm-9" >
+    <div class="form-group">
+     <h1>prova 1</h1>
+     <input type="text" id="nome" oninput="myFunction()" name="nome" class="form-control"  placeholder="Name">
+    <p style="color: red;" id="enome"></p>
+   </div>
+  </div>
+
+  <div class="col-xl-6 col-md-6 col-sm-9" >
+    <div class="form-group">
+     <h1>prova 1</h1>
+     <input type="text" id="nome" oninput="myFunction()" name="nome" class="form-control"  placeholder="Name">
+    <p style="color: red;" id="enome"></p>
+   </div>
+  </div>
+
+  <div class="col-xl-6 col-md-6 col-sm-9" >
+    <div class="form-group">
+     <h1>prova 1</h1>
+     <input type="text" id="nome" oninput="myFunction()" name="nome" class="form-control"  placeholder="Name">
+    <p style="color: red;" id="enome"></p>
+   </div>
+  </div>
+
+  <div class="col-xl-6 col-md-6 col-sm-9" >
+    <div class="form-group">
+     <h1>prova 1</h1>
+     <input type="text" id="nome" oninput="myFunction()" name="nome" class="form-control"  placeholder="Name">
+    <p style="color: red;" id="enome"></p>
+   </div>
+  </div>
+
+  <div class="col-xl-6 col-md-6 col-sm-9" >
+    <div class="form-group">
+     <h1>prova 1</h1>
+     <input type="text" id="nome" oninput="myFunction()" name="nome" class="form-control"  placeholder="Name">
+    <p style="color: red;" id="enome"></p>
+   </div>
+  </div>
+  <div class="col-xl-6 col-md-6 col-sm-9" >
+    <div class="form-group">
+     <button type="submit" id="sign"  name="signin" class="btn btn-primary">Sign in</button>
+    <p style="color: red;" id="enome"></p>
+   </div>
+  </div>
+  </div>
+</div>
+<div class="col-xl-6 col-md-6 col-sm-9" >
+    <img src="https://image.flaticon.com/icons/png/512/123/123919.png" id="car" width="40%">
+    <hr style="top:-10px; border-color:#43960f; height:10px; background-color:black;">
+</div>
+
+</div>
+<style media="screen">
+#car
+{
+    transition: transform 4s;
+}
+
+#car:hover {
+  transform: translate(100%);
+}
+</style>
 
 </div>
 </div>
-   <a href="#"data-toggle="modal" data-target="#CreaViaggio">Sign Up </a>
+
+
+
 
      <!-- Navbar on small screens -->
      <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
@@ -138,15 +306,9 @@
            <!-- Accordion -->
            <div class="w3-card w3-round">
              <div class="w3-white">
-               <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i>Crea invio</button>
-               <div id="Demo1" class="w3-hide w3-container">
-                 <p>Some text..</p>
-               </div>
-               <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i>Traccia il mio pacco</button>
-               <div id="Demo2" class="w3-hide w3-container">
-                 <p>Some other text..</p>
-               </div>
-               <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i>Invii</button>
+               <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i>Crea invio</button>
+               <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"onclick="" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i>Traccia il mio pacco</button>
+               <!--<button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i>Invii</button>
                <div id="Demo3" class="w3-hide w3-container">
               <div class="w3-row-padding">
               <br>
@@ -169,7 +331,7 @@
                   <img src="/w3images/snow.jpg" style="width:100%" class="w3-margin-bottom">
                 </div>
               </div>
-               </div>
+            </div>-->
              </div>
            </div>
            <br>

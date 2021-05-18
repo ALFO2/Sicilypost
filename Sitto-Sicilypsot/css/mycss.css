@@ -5,7 +5,7 @@
   font-family: 'PT Sans', sans-serif;
 }
 
-.modal-content {
+#modalcontent {
   height:700px;
   border-radius: 4rem;
   -webkit-box-shadow: -1px -2px 42px -19px rgba(0,0,0,0.74);
@@ -32,12 +32,7 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
-.modal-dialog
-{
-  margin:10%;
-  margin-top: 10%;
-  margin-bottom: 0px;
-}
+
 
 
 .modal-content h3 {
