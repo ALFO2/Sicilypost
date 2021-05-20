@@ -1,9 +1,7 @@
 <?php session_start();
 require 'funtion/function.php';
 require 'Generale.php';
-if () {
-  # code...
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,27 +61,18 @@ if () {
               <form method="post" >
                 <div class="form-group">
                   <label for="exampleInputName">Name</label>
-
-
-                  <input type="text" id="nome" oninput="myFunction()" name="nome" class="form-control"  placeholder="Name">
-
-
+                  <input type="text" id="nome" oninput="va_login('nome','enome','nome')" name="nome" class="form-control"  placeholder="Name">
                   <p style="color: red;" id="enome"></p>
                 </div>
                 <div class="form-group">
 
                 <label for="exampleInputEmail1">E-mail </label>
-
-
-
-                  <input type="email" id="ema" oninput="myFunction()" name="email" class="form-control"  aria-describedby="emailHelp" placeholder="E-mail">
-
-
+                  <input type="email" id="ema" oninput="va_login('ema','eemail','email')" name="email" class="form-control"  aria-describedby="emailHelp" placeholder="E-mail">
                   <p style="color: red;" id="eemail"></p>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" id="pass" oninput="myFunction()" name="password" class="form-control"  placeholder="Password">
+                  <input type="password" id="pass" oninput="va_login('pass','epass','password')" name="password" class="form-control"  placeholder="Password">
                   <p style="color: red;" id="epass"></p>
                 </div>
                 <button type="submit" id="sign"  name="signin" class="btn btn-primary">Sign in</button>
@@ -95,113 +84,6 @@ if () {
       </div>
     </div>
 
-
-    <script>
-    function validazione(inputtxt,tipo)
-    {
-     switch (tipo) {
-       case "password":
-       var passw=  /^[A-Za-z]\w{7,20}$/;
-             if(inputtxt.value == "") {
-           return 0;
-        }
-
- //minimum password length validation
-        if(inputtxt.value.length < 8) {
-           return 0;
-        }
-
-        if(inputtxt.value.match(passw))
-       {
-       return 1;
-       }
-       else
-       {
-       return 0;
-       }
-         break;
-
-       case "nome":
-       if(inputtxt.value == "") {
-       return 0;
-       }
-
-       //minimum password length validation
-       if(inputtxt.value.length < 2) {
-       return 0;
-       }
-       if(inputtxt.value.match(/[1-9]/g))
-      {
-      return 0;
-      }
-      else
-      {
-      return 1;
-      }
-           break;
-       case "email":
-       if(inputtxt.value == "") {
-       return 0;
-       }
-       else {
-         return 1;
-       }
-
-       //minimum password length validation
-
-         break;
-      case "eta":
-
-        break;
-        return 0;
-       default:
-
-     }
-    }
-
-    document.getElementById("sign").disabled = true;
-
-
-
-    function myFunction() {
-
-      var x =validazione(document.getElementById("nome"),'nome');
-      var y =validazione(document.getElementById("ema"),'email');
-      var g =validazione(document.getElementById("pass"),'password');
-
-      var l=0;
-      var o=0;
-      var p=0;
-    if (x==1) {
-    document.getElementById("enome").innerHTML = null  ;
-    l=1
-    }else {
-    document.getElementById("enome").innerHTML = "nome non valido"  ;
-    document.getElementById("sign").disabled = true;
-    l=0;
-    }
-    if (y==1) {
-      document.getElementById("eemail").innerHTML = null  ;
-    o=1;
-    }else {
-    document.getElementById("eemail").innerHTML = "email non valida"  ;
-    document.getElementById("sign").disabled = true;
-    o=0;
-    }
-    if (g==1) {
-      document.getElementById("epass").innerHTML = null ;
-      p=1;
-    }else {
-    document.getElementById("epass").innerHTML = "password non valido"  ;
-    document.getElementById("sign").disabled = true;
-     p=0;
-    }
-     f=p+o+l;
-     if (f==3) {
-         document.getElementById("sign").disabled = false;
-     }
-    }
-    </script>
 
     <!-- header inner -->
     <div class="header-top">
@@ -590,32 +472,13 @@ And we ensure the safety and respect of your package</p>
           <!-- sidebar -->
           <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
           <script src="js/custom.js"></script>
+            <script src="js/validazione.js"></script>
           <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
 
-          <script>
-// This example adds a marker to indicate the position of Bondi Beach in Sydney,
-// Australia.
 
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 11,
-    center: {
-      lat: 40.645037,
-      lng: -73.880224
-    },
-  });
-
-  var image = 'images/maps-and-flags.png';
-  var beachMarker = new google.maps.Marker({
-    position: {
-      lat: 40.645037,
-      lng: -73.880224
-    },
-    map: map,
-    icon: image
-  });
-}
+<script>
+ document.getElementById("sign").disabled = true;
 </script>
 <!-- google map js -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>

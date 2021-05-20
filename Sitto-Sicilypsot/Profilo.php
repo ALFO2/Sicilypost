@@ -199,15 +199,14 @@
   <div class="col-xl-6 col-md-6 col-sm-9" >
     <div class="form-group">
      <h1>Data Rititro</h1>
-     <input type="Date" id="nome" oninput="myFunction()" name="nome" class="form-control"  >
-    <p style="color: red;" id="enome"></p>
+     <input type="Date"  class="form-control"  >
    </div>
   </div>
 
   <div class="col-xl-6 col-md-6 col-sm-9" >
     <div class="form-group">
      <h1>Lunghezza pacco</h1>
-     <input type="number" id="lung" oninput="num('lung')" name="nome" min="0" max="95"class="form-control"  placeholder="0">
+     <input type="number" id="lung" oninput="solonumeri('lung',8)" name="nome" min="0" max="95"class="form-control"  placeholder="0">
     <p style="color: red;" id="enome"></p>
    </div>
   </div>
@@ -215,34 +214,24 @@
   <div class="col-xl-6 col-md-6 col-sm-9" >
     <div class="form-group">
      <h1>Altezza</h1>
-     <input type="number" id="alte" oninput="num('alt')" name="nome" min="0" max="95"class="form-control"  placeholder="o">
+     <input type="number" id="alte" oninput="solonumeri('alte',8)" name="nome" min="0" max="95"class="form-control"  placeholder="o">
     <p style="color: red;" id="enome"></p>
    </div>
   </div>
   <div class="col-xl-6 col-md-6 col-sm-9" >
     <div class="form-group">
      <h1>Peso</h1>
-     <input type="number" id="peso" oninput="num('peso')" name="nome" min="0" max="95" class="form-control"  placeholder="0">
+     <input type="number" id="peso" oninput="solonumeri('peso',8)" name="nome" min="0" max="95" class="form-control"  placeholder="0">
     <p style="color: red;" id="enome"></p>
    </div>
   </div>
-  
+
   <div class="col-xl-6 col-md-6 col-sm-9" >
     <div class="form-group">
      <input type="submit" name="" value="Crea">
    </div>
   </div>
-   <script type="text/javascript">
-     function num("var1")
-                  {
-                     if (document.getElementById("var1").value>95) {
-                      document.getElementById("var1").value=0;
-                     }
-                     if (document.getElementById("var1").value.length>3) {
-                          document.getElementById("var1").value=0;
-                     }
-                  }
-   </script>
+
   </div>
 </div>
 <div class="col-xl-6 col-md-6 col-sm-9" >
@@ -564,34 +553,16 @@
           <!-- sidebar -->
           <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
           <script src="js/custom.js"></script>
+            <script src="js/validazione.js"></script>
           <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
 
-          <script>
-// This example adds a marker to indicate the position of Bondi Beach in Sydney,
-// Australia.
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 11,
-    center: {
-      lat: 40.645037,
-      lng: -73.880224
-    },
-  });
+<script>
 
-  var image = 'images/maps-and-flags.png';
-  var beachMarker = new google.maps.Marker({
-    position: {
-      lat: 40.645037,
-      lng: -73.880224
-    },
-    map: map,
-    icon: image
-  });
-}
 </script>
 <!-- google map js -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>
+<script src="js/validazione.js"></script>
 <!-- end google map js -->
 
 

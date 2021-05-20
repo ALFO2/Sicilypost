@@ -89,50 +89,7 @@
 
 
     <script>
-    
-
     document.getElementById("sign").disabled = true;
-
-
-    
-    function myF() {
-
-      var x =validazione(document.getElementById("nome"),'nome');
-      var y =validazione(document.getElementById("ema"),'email');
-      var g =validazione(document.getElementById("pass"),'password');
-      
-      var l=0;
-      var o=0;
-      var p=0;
-    if (x==1) {
-    document.getElementById("enome").innerHTML = null  ;
-    l=1
-    }else {
-    document.getElementById("enome").innerHTML = "nome non valido"  ;
-    document.getElementById("sign").disabled = true;
-    l=0;
-    }
-    if (y==1) {
-      document.getElementById("eemail").innerHTML = null  ;
-    o=1;
-    }else {
-    document.getElementById("eemail").innerHTML = "email non valida"  ;
-    document.getElementById("sign").disabled = true;
-    o=0;
-    }
-    if (g==1) {
-      document.getElementById("epass").innerHTML = null ;
-      p=1;
-    }else {
-    document.getElementById("epass").innerHTML = "password non valido"  ;
-    document.getElementById("sign").disabled = true;
-     p=0;
-    }
-     f=p+o+l;
-     if (f==3) {
-         document.getElementById("sign").disabled = false;
-     }
-    }
     </script>
 
     <!-- header inner -->
@@ -184,44 +141,32 @@
                 <div class="form-group">
                   <label for="exampleInputName">Name</label>
 
-                  <input type="text" id="perosna" oninput="myFunction()" class="form-control" placeholder="Name">
+                  <input type="text" id="perosna" oninput="va_login('perosna','nom','nome')" class="form-control" placeholder="Name">
                   <p style="color: red;" id="nom"></p>
 
                 </div>
                 <div class="form-group">
                   <label for="exampleInputName">Lastname</label>
 
-                  <input type="text" id="lasname" oninput="myFunction()" class="form-control" placeholder="Lastname">
+                  <input type="text" id="lasname" oninput="va_login('lasname','laname','nome')" class="form-control" placeholder="Lastname">
                   <p style="color: red;" id="laname"></p>
 
                 </div>
                 <div class="form-group">
                   <label for="exampleInputName">Fiscal Code</label>
 
-                  <input type="text" id="cfi" oninput="myFunction()" class="form-control"  placeholder="Fiscal Code">
+                  <input type="text" id="cfi" oninput="va_login('cfi','fc','cf')" class="form-control"  placeholder="Fiscal Code">
                   <p style="color: red;" id="fc"></p>
 
                 </div>
                 <div class="form-group ">
                   <label for="exampleInputName">Age</label>
 
-                  <input style="width:20%;"  oninput="age()" type="number" id="numero"  min="0" max="95" class="form-control num"  placeholder="0">
+                  <input style="width:20%;"  oninput="solonumeri('numero',3)" type="number" id="numero"  min="0" max="95" class="form-control num"  placeholder="0">
                   <p style="color: red;" id="ag"></p>
 
                 </div>
-                <script type="text/javascript">
-                  function age()
-                  {
-                     if (document.getElementById("numero").value>95) {
-                      document.getElementById("numero").value=0;
-                     }
-                     if (document.getElementById("numero").value.length>3) {
-                          document.getElementById("numero").value=0;
-                     }
-                  }
-                  
 
-                </script>
                 <div class="form-group">
                   <label for="exampleInputName">sex</label><br>
               <input type="radio" name="radiogroup1" value="male"id="rd1">
@@ -232,7 +177,7 @@
                 <div class="form-group">
                   <label for="exampleInputEmail1">E-mail </label>
 
-                  <input type="email" id="ema" oninput="myFunction()" class="form-control" aria-describedby="emailHelp" placeholder="E-mail">
+                  <input type="email" id="ema" oninput="va_login('ema','em','nome')" class="form-control" aria-describedby="emailHelp" placeholder="E-mail">
                   <p style="color: red;" id="em"></p>
 
                 </div>
@@ -240,14 +185,14 @@
                 <div class="form-group">
 
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" id="pass" oninput="myFunction()" class="form-control"   placeholder="Password">
+                  <input type="password" id="pass" oninput="va_login('pass','pas','password')" class="form-control"   placeholder="Password">
                   <p style="color: red;"  id="pas"></p>
 
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Confirmation Password</label>
 
-                  <input type="password" id="pass1" oninput="myFunction()" class="form-control"    placeholder="Confirmation Password">
+                  <input type="password" id="pass1" oninput="uguale('pass1','pass','pas1')" class="form-control"    placeholder="Confirmation Password">
                   <p style="color: red;" id="pas1"></p>
 
                 </div>
@@ -272,29 +217,29 @@
               <form class="" method="post">
                 <div class="form-group">
                   <label for="exampleInputName">city</label>
-                  <input type="text" oninput="myFunc()" class="form-control" value="sdhsdsd" id="citt" placeholder="city">
+                  <input type="text" oninput="va_login('citt','cittn','nome')" class="form-control" value="sdhsdsd" id="citt" placeholder="city">
                   <p id="cittn"></p>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputName">address</label>
-                  <input type="text" oninput="myFunc()" class="form-control" id="indir" placeholder="address">
+                  <input type="text" oninput="va_login('indir','indirn','nome')" class="form-control" id="indir" placeholder="address">
                   <p id="indirn"></p>
                 </div>
                 <div class="form-group ">
                   <label for="exampleInputName">House number</label>
-                  <input style="width:20%;" oninput="myFunc()" type="number"  value="0" min="0" class="form-control num" id="nume" placeholder="0">
+                  <input style="width:20%;" oninput="solonumeri('nume',8)" type="number"  value="0" min="0" class="form-control num" id="nume" placeholder="0">
                   <p id="numen"></p>
                 </div>
                 <div class="form-group">
                   <div class="form-group ">
                     <label for="exampleInputName">CAP</label>
-                    <input style="width:20%;" oninput="myFunc()" type="number"  value="0" min="0" class="form-control num" id="ca" placeholder="2..">
+                    <input style="width:20%;" oninput="solonumeri('ca',7)" type="number"  value="0" min="0" class="form-control num" id="ca" placeholder="2..">
                     <p id="can"></p>
                   </div>
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Region</label>
-                  <input type="text" oninput="myFunc()" class="form-control" id="rego" aria-describedby="emailHelp" placeholder="Region">
+                  <input type="text" oninput="va_login('rego','regon','nome')" class="form-control" id="rego" aria-describedby="emailHelp" placeholder="Region">
                   <p id="regon"></p>
                 </div>
 
@@ -307,232 +252,7 @@
 
          </div>
 
-              <script>
-                if (document.getElementById('next')){
-                 document.getElementById('next').disabled = true;
-                }
-                 if (document.getElementById('sup')){
-                 document.getElementById('sup').disabled = true;
-                }
-                
-    function validazione(inputtxt,tipo)
-    {
-     switch (tipo) {
-       
-       case "password":
-       var passw=  /^[A-Za-z]\w{7,20}$/;
-             if(inputtxt.value == "") {
-           return 0;
-        }
-         
- //minimum password length validation
-        if(inputtxt.value.length < 8) {
-           return 0;
-        }
-        
-        if(inputtxt.value.match(passw))
-       {
-       return 1;
-       }
-       else
-       {
-       return 0;
-       }
-         break;
 
-       case "nome":
-       if(inputtxt.value == null) {
-       return 0;
-       }
-
-       //minimum password length validation
-       if(inputtxt.value.length < 2) {
-       return 0;
-       }
-       if(inputtxt.value.match(/[1-9]/g))
-      {
-      return 0;
-      }
-      else
-      {
-      return 1;
-      }
-           break;
-       case "email":
-       if(inputtxt.value == "") {
-       return 0;
-       }
-       else {
-         return 1;
-       }
-
-       //minimum password length validation
-
-         break;
-
-         case "cod_fiscale":
-          if(inputtxt.value.length < 16) {
-       return 0;
-       }else
-       {
-        return 1;
-       }
-         break;
-      case "numero":
-        if(inputtxt.value.match(/[1-9]/g))
-      {
-      return 1;
-      }
-      else
-      {
-      return 0;
-      }
-        break;
-        return 0;
-       default:
-
-     }
-    }
-    function myFunc()
-    {
-       var citta=validazione(document.getElementById('citt'),'nome');
-      var indirizzo=validazione(document.getElementById("indir"),'nome');
-      var numberciv=validazione(document.getElementById("nume"),'numero');
-      var CAP=validazione(document.getElementById("ca"),'numero');
-      var Region=validazione(document.getElementById("rego"),'nome');
-      var ci1=0;
-      var ind1=0;
-      var numb=0;
-      var ca1=0;
-      var reg1=0;
-
-    if (Region==1) {
-        document.getElementById("regon").innerHTML = "password uguale"  ;
-    ci1=1;
-    }else {
-    document.getElementById("regon").innerHTML = "password non uguale "  ;
-    document.getElementById("sup").disabled = true;
-    ci1=0;
-      }    
-    if(CAP==1) {
-        document.getElementById("can").innerHTML = "password uguale"  ;
-    ca1=1;
-    }else {
-    document.getElementById("can").innerHTML = "password non uguale "  ;
-    document.getElementById("sup").disabled = true;
-    ca1=0;
-      }
-    if(numberciv==1) {
-      document.getElementById("numen").innerHTML = "password uguale"  ;
-    numb=1;
-    }else {
-    document.getElementById("numen").innerHTML = "password non uguale "  ;
-    document.getElementById("sup").disabled = true;
-    numb=0;
-    }
-    if(indirizzo==1) {
-    document.getElementById("indirn").innerHTML = "password uguale"  ;
-    ind1=1;
-    }else {
-    document.getElementById("indirn").innerHTML = "password non uguale "  ;
-    document.getElementById("sup").disabled = true;
-    ind1=0;
-      }
-    if(citta==1) {
-        document.getElementById("cittn").innerHTML = "password uguale"  ;
-    reg1=1;
-    }else {
-    document.getElementById("cittn").innerHTML = "password non uguale "  ;
-    document.getElementById("sup").disabled = true;
-    reg1=0;
-      }
-      f=ci1+ind1+numb+ca1+reg1;
-      if (f==5) {
-         document.getElementById("sup").disabled = false;
-     }
-    }
-     
-
-    function myFunction() {
-
-      var x =validazione(document.getElementById("perosna"),'nome');
-      var y =validazione(document.getElementById("ema"),'email');
-      var g =validazione(document.getElementById("pass"),'password');
-      var Lastname =validazione(document.getElementById("lasname"),'nome');
-      var cf=validazione(document.getElementById("cfi"),'cod_fiscale');
-      var passcon=0;
-    
-      if (document.getElementById("pass").value==document.getElementById("pass1").value) {
-       passcon=1;
-      }else
-      {
-        passcon=0;
-      }
-      
-      var l=0;
-      var o=0;
-      var p=0;
-      var l1=0;
-      var o1=0;
-      var p1=0;    
-
-      if(passcon==1) {
-         document.getElementById("pas1").innerHTML = "password uguale"  ;
-    p1=1
-    }else {
-    document.getElementById("pas1").innerHTML = "password non uguale "  ;
-    document.getElementById("next").disabled = true;
-    p1=0;
-
-      }
-      if (cf==1) {
-          document.getElementById("fc").innerHTML = null  ;
-    o1=1
-    }else {
-    document.getElementById("fc").innerHTML = "cod_fiscale non valido"  ;
-    document.getElementById("next").disabled = true;
-    o1=0;
-      }
-    if (Lastname==1) {
-     document.getElementById("laname").innerHTML = null  ;
-    l1=1
-    }else {
-    document.getElementById("laname").innerHTML = "cognome non valido"  ;
-    document.getElementById("next").disabled = true;
-    l1=0;
-    }
-    if (x==1) {
-    document.getElementById("nom").innerHTML = null  ;
-    l=1
-    }else {
-    document.getElementById("nom").innerHTML = "nome non valido"  ;
-    document.getElementById("next").disabled = true;
-    l=0;
-    }
-    if (y==1) {
-      document.getElementById("em").innerHTML = null  ;
-    o=1;
-    }else {
-    document.getElementById("em").innerHTML = "email non valida"  ;
-    document.getElementById("next").disabled = true;
-    o=0;
-    }
-    if (g==1) {
-      document.getElementById("pas").innerHTML = null ;
-      p=1;
-    }else {
-    document.getElementById("pas").innerHTML = "password non valido"  ;
-    document.getElementById("next").disabled = true;
-     p=0;
-    }
-     f=p+o+l+l1+p1+o1;
-     if (f==5) {
-         document.getElementById("next").disabled = false;
-     }
-    }
-
-    
-    </script>
 
 <!-- contact -->
 
@@ -602,62 +322,19 @@
           <!-- sidebar -->
           <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
           <script src="js/custom.js"></script>
+          <script src="js/validazione.js"></script>
           <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
-
-          <script>
-
-
-
-          function sewpass() {
-            var x = document.getElementById("pass");
-            if (x.type === "password") {
-              x.type = "text";
-            } else {
-              x.type = "password";
-            }
-          }
+<script>
+  if (document.getElementById('next')){
+   document.getElementById('next').disabled = true;
+  }
+   if (document.getElementById('sup')){
+   document.getElementById('sup').disabled = true;
+  }
+</script>
 
 
-          function validate(evt) {
-var theEvent = evt || window.event;
-
-// Handle paste
-if (theEvent.type === 'paste') {
- key = event.clipboardData.getData('text/plain');
-} else {
-// Handle key press
- var key = theEvent.keyCode || theEvent.which;
- key = String.fromCharCode(key);
-}
-var regex = /[0-9]|\./;
-if( !regex.test(key) ) {
-theEvent.returnValue = false;
-if(theEvent.preventDefault) theEvent.preventDefault();
-}
-}
-
-// This example adds a marker to indicate the position of Bondi Beach in Sydney,
-// Australia.
-function initMap() {
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 11,
-    center: {
-      lat: 40.645037,
-      lng: -73.880224
-    },
-  });
-
-  var image = 'images/maps-and-flags.png';
-  var beachMarker = new google.maps.Marker({
-    position: {
-      lat: 40.645037,
-      lng: -73.880224
-    },
-    map: map,
-    icon: image
-  });
-}
 </script>
 <!-- google map js -->
 
