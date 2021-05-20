@@ -80,7 +80,6 @@
                   <p style="color: red;" id="epass"></p>
                 </div>
                 <button type="submit" id="sign"  name="signin" class="btn btn-primary">Sign in</button>
-                <a href="sign-up.php">Sign up</a>
               </form>
             </div>
           </div>
@@ -206,7 +205,7 @@
                 <div class="form-group ">
                   <label for="exampleInputName">Age</label>
 
-                  <input style="width:20%;"  oninput="age()" type="number" id="numero" value="0" min="0" max="95" class="form-control num"  placeholder="0">
+                  <input style="width:20%;"  oninput="age()" type="number" id="numero"  min="0" max="95" class="form-control num"  placeholder="0">
                   <p style="color: red;" id="ag"></p>
 
                 </div>
@@ -301,7 +300,7 @@
 
                 <button type="submit" id="sup" class="btn btn-primary">Sign Up</button>
               <?php } ?>
-                  <a href="sign-in.phph" data-toggle="modal" data-target="#exampleModal">Sign Up </a>
+                  <a href="sign-in.phph" data-toggle="modal" data-target="#exampleModal">Sign in </a>
               </form>
             </div>
 

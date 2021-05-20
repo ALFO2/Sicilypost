@@ -184,7 +184,7 @@
 
 <div class="offcanvas offcanvas-bottom" style="height:700px; background-color:#ececf0; "data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
 <div class="offcanvas-header">
-<h1 class="offcanvas-title" id="offcanvasScrollingLabel" >CREA CONSEGNA</h1>
+<h1 class="offcanvas-title" id="offcanvasScrollingLabel" >PRENOTA RITIRO PACCO</h1>
 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 
 </div>
@@ -198,57 +198,51 @@
 
   <div class="col-xl-6 col-md-6 col-sm-9" >
     <div class="form-group">
-     <h1>prova 1</h1>
-     <input type="text" id="nome" oninput="myFunction()" name="nome" class="form-control"  placeholder="Name">
+     <h1>Data Rititro</h1>
+     <input type="Date" id="nome" oninput="myFunction()" name="nome" class="form-control"  >
     <p style="color: red;" id="enome"></p>
    </div>
   </div>
 
   <div class="col-xl-6 col-md-6 col-sm-9" >
     <div class="form-group">
-     <h1>prova 1</h1>
-     <input type="text" id="nome" oninput="myFunction()" name="nome" class="form-control"  placeholder="Name">
+     <h1>Lunghezza pacco</h1>
+     <input type="number" id="lung" oninput="num('lung')" name="nome" min="0" max="95"class="form-control"  placeholder="0">
     <p style="color: red;" id="enome"></p>
    </div>
   </div>
 
   <div class="col-xl-6 col-md-6 col-sm-9" >
     <div class="form-group">
-     <h1>prova 1</h1>
-     <input type="text" id="nome" oninput="myFunction()" name="nome" class="form-control"  placeholder="Name">
-    <p style="color: red;" id="enome"></p>
-   </div>
-  </div>
-
-  <div class="col-xl-6 col-md-6 col-sm-9" >
-    <div class="form-group">
-     <h1>prova 1</h1>
-     <input type="text" id="nome" oninput="myFunction()" name="nome" class="form-control"  placeholder="Name">
-    <p style="color: red;" id="enome"></p>
-   </div>
-  </div>
-
-  <div class="col-xl-6 col-md-6 col-sm-9" >
-    <div class="form-group">
-     <h1>prova 1</h1>
-     <input type="text" id="nome" oninput="myFunction()" name="nome" class="form-control"  placeholder="Name">
-    <p style="color: red;" id="enome"></p>
-   </div>
-  </div>
-
-  <div class="col-xl-6 col-md-6 col-sm-9" >
-    <div class="form-group">
-     <h1>prova 1</h1>
-     <input type="text" id="nome" oninput="myFunction()" name="nome" class="form-control"  placeholder="Name">
+     <h1>Altezza</h1>
+     <input type="number" id="alte" oninput="num('alt')" name="nome" min="0" max="95"class="form-control"  placeholder="o">
     <p style="color: red;" id="enome"></p>
    </div>
   </div>
   <div class="col-xl-6 col-md-6 col-sm-9" >
     <div class="form-group">
-     <button type="submit" id="sign"  name="signin" class="btn btn-primary">Sign in</button>
+     <h1>Peso</h1>
+     <input type="number" id="peso" oninput="num('peso')" name="nome" min="0" max="95" class="form-control"  placeholder="0">
     <p style="color: red;" id="enome"></p>
    </div>
   </div>
+  
+  <div class="col-xl-6 col-md-6 col-sm-9" >
+    <div class="form-group">
+     <input type="submit" name="" value="Crea">
+   </div>
+  </div>
+   <script type="text/javascript">
+     function num("var1")
+                  {
+                     if (document.getElementById("var1").value>95) {
+                      document.getElementById("var1").value=0;
+                     }
+                     if (document.getElementById("var1").value.length>3) {
+                          document.getElementById("var1").value=0;
+                     }
+                  }
+   </script>
   </div>
 </div>
 <div class="col-xl-6 col-md-6 col-sm-9" >
@@ -306,8 +300,9 @@
            <!-- Accordion -->
            <div class="w3-card w3-round">
              <div class="w3-white">
-               <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i>Crea invio</button>
+               <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i>Crea Prenotazione</button>
                <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"onclick="" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i>Traccia il mio pacco</button>
+               <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"onclick="" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i>Le mie prenotazioni</button>
                <!--<button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i>Invii</button>
                <div id="Demo3" class="w3-hide w3-container">
               <div class="w3-row-padding">

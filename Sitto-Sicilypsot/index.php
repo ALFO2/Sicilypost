@@ -1,5 +1,9 @@
 <?php session_start();
 require 'funtion/function.php';
+require 'Generale.php';
+if () {
+  # code...
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -224,7 +228,7 @@ require 'funtion/function.php';
                       <li> <a href="#testimonial">Testomonial</a> </li>
                       <li> <a href="#contact">Contact Us</a> </li>
                       <li> <a href="Profilo.php">Profile</a> </li>
-                        <li><a href="#"data-toggle="modal" data-target="#exampleModal">Sign Up </a> </li>
+                        <li><a href="#"data-toggle="modal" data-target="#exampleModal">Sign in </a> </li>
                      <li> <a href="index.php"><img src="icon/icon_b.png" alt="#" /></a></li>
                      </ul>
                    </nav>
