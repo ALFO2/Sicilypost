@@ -1,9 +1,9 @@
 <?php
 
-function validation($type,$data)
+function validation($data,$type)
 {
  switch ($type) {
-   case 'name':
+   case 'nome':
      // code...
 		 $data= str_replace(' ', '',$data);
      $data = trim($data);
@@ -159,26 +159,18 @@ function validation($type,$data)
 function login($nome,$email,$password)
 {
   if (validation($nome,'nome') && validation($email,'email') && validation($password,'password')) {
-     $sql_nome="Select nome from utente where nome=".$nome;
-     $sql_email="Select email from utente where email=".$email;
-     $sql_password="Select password from utente where password=".$password;
+     $sql_nome="Select nome from utente where nome='".$nome."';'";
+     $sql_email="Select email from utente where email='".$email."';'";
+     $sql_password="Select password from utente where password='".$password."';'";
 
-    if (BOOL_SQl($sql_nome) && BOOL_SQl($sql_email) && BOOL_SQl($sql_password)) 
+    if (BOOL_SQl($sql_nome) && BOOL_SQl($sql_email) && BOOL_SQl($sql_password))
      {
        return 1;
-     } 
-      return 0;
-    
+     }
   }
- 
+
    return 0;
 }
-
-
-
-
-
-
 
 
  ?>

@@ -73,6 +73,7 @@ function solonumeri(var1,var2)
   }
 
 }
+
 function see(var1,var2){
   if (document.getElementById(var1).checked == true) {
     document.getElementById(var2).type="text";
@@ -80,14 +81,17 @@ function see(var1,var2){
   {
     document.getElementById(var2).type="password";
   }
-  
+
 }
+
 function uguale(var1,var2,var3)
 {
   if (var1==var2) {
   document.getElementById(var3).innerHTML = 'non uguale'  ;
   }
 }
+
+
 function va_login(var1,var2,var3) {
        var x =validazione(document.getElementById(var1),var3);
        var l=0;
@@ -103,4 +107,11 @@ function va_login(var1,var2,var3) {
               l=0;
           }
 
+}
+
+function Ajax(str) {
+   var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET","Profilo.php?q=" + str, true);
+    xmlhttp.send();
+  }
 }

@@ -1,26 +1,8 @@
 <?php session_start();
 require 'funtion/function.php';
 require 'funtion/DATABASE_FUNCTION.php';
- $nome =SQL('Select nome from utente','nome');
- echo $nome[0];
- 
- 
-     if ($_SERVER["REQUEST_METHOD"]=="POST") {
-         if (isset($_POST['signin'])) {
-          $nome=$_POST['nome'];
-          $email=$_POST['email'];
-          $password=$_POST['password'];
-           
 
-           if (BOOL_SQl("Select nome from utente where nome=".$nome)) {
-             echo "si esiste";
-           }
-           else
-           {
-             echo "no esist";
-           }
-         }
-     }
+
 
 ?>
 <!DOCTYPE html>
@@ -95,6 +77,10 @@ require 'funtion/DATABASE_FUNCTION.php';
                   <input type="password" id="pass" oninput="va_login('pass','epass','password')" name="password" class="form-control"  placeholder="Password">
                   <p style="color: red;" id="epass"></p>
                 </div>
+                <div class="">
+                  <label for="check" style="font-size:15px;">Check Password</label>
+                  <input type="checkbox"  id="cont" onclick="see('cont','pass')"  >
+                </div>
                 <button type="submit" id="sign"  name="signin" class="btn btn-primary">Sign in</button>
                 <a href="sign-up.php">Sign up</a>
               </form>
@@ -103,8 +89,24 @@ require 'funtion/DATABASE_FUNCTION.php';
         </div>
       </div>
     </div>
-    
+   <?php
+          if ($_SERVER["REQUEST_METHOD"]=="POST") {
+              if (isset($_POST['signin'])) {
+               $nome=$_POST['nome'];
+               $email=$_POST['email'];
+               $password=$_POST['password'];
 
+                if (login($nome,$email,$password)) {
+                  $_SESSION["utente"]=SQL("Select Cod_fc from utente where nome='".$nome."' and email='".$email."'",'Cod_fc');
+                }
+                else
+                {
+                  echo "no esist";
+                }
+              }
+             }
+
+    ?>
     <!-- header inner -->
     <div class="header-top">
       <div class="header">
@@ -129,8 +131,12 @@ require 'funtion/DATABASE_FUNCTION.php';
                       <li> <a href="#about">About</a> </li>
                       <li> <a href="#testimonial">Testomonial</a> </li>
                       <li> <a href="#contact">Contact Us</a> </li>
+                      <?php if (isset($_SESSION["utente"])): ?>
                       <li> <a href="Profilo.php">Profile</a> </li>
-                        <li><a href="#"data-toggle="modal" data-target="#exampleModal">Sign in </a> </li>
+                      <?php endif; ?>
+                     <?php if (!isset($_SESSION["utente"])): ?>
+                     <li><a href="#"data-toggle="modal" data-target="#exampleModal">Sign in </a> </li>
+                     <?php endif; ?>
                      <li> <a href="index.php"><img src="icon/icon_b.png" alt="#" /></a></li>
                      </ul>
                    </nav>

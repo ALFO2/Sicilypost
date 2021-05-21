@@ -2,6 +2,14 @@
 require 'funtion/function.php';
 require 'funtion/DATABASE_FUNCTION.php';
 
+function Esci()
+{
+  session_unset(); session_destroy();
+}
+if (!isset($_SESSION["utente"]))
+{
+  header('Location: '.$_SERVER['PHP_SELF']);
+}
 
 ?>
 <!DOCTYPE html>
@@ -175,6 +183,8 @@ require 'funtion/DATABASE_FUNCTION.php';
                   <nav class="main-menu ">
                     <ul class="menu-area-main" style="height: 30px;">
                       <li class=""> <a href="index.php">Home</a> </li>
+                      <li class=""> <a role="button" href="index.php" onclick="Ajax('esci')" class="debatebtn">Esci</a></li>
+                      <?php if (isset($_REQUEST["q"])) { if($_REQUEST["q"]=='esci') {session_unset(); session_destroy();}} ?>
                      <li> <a href="index.php"><img src="icon/icon_b.png" alt="#" /></a></li>
                      </ul>
                    </nav>
