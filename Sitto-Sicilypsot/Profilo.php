@@ -183,7 +183,7 @@ if (!isset($_SESSION["utente"]))
                   <nav class="main-menu ">
                     <ul class="menu-area-main" style="height: 30px;">
                       <li class=""> <a href="index.php">Home</a> </li>
-                      <li class=""> <a role="button" href="index.php" onclick="Ajax('esci')" class="debatebtn">Esci</a></li>
+                      <li class=""> <a role="button" href="index.php" onclick="Ajax('Profilo.php?q=esci')" class="debatebtn">Esci</a></li>
                       <?php if (isset($_REQUEST["q"])) { if($_REQUEST["q"]=='esci') {session_unset(); session_destroy();}} ?>
                      <li> <a href="index.php"><img src="icon/icon_b.png" alt="#" /></a></li>
                      </ul>
@@ -568,7 +568,7 @@ if (!isset($_SESSION["utente"]))
           <!-- sidebar -->
           <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
           <script src="js/custom.js"></script>
-            <script src="js/validazione.js"></script>
+            <script src="js/func.js"></script>
           <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
 

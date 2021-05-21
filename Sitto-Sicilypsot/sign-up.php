@@ -205,12 +205,12 @@ require 'funtion/DATABASE_FUNCTION.php';
                   <p style="color: red;" id="pas1"></p>
 
                 </div>
-               
+
                 <div class="round">
                 <input type="checkbox" id="checkbox" onclick="see('checkbox','Passwo')"/> &nbsp; Show Password
                 <label for="checkbox"></label>
                 </div>
-            
+
                 <button type="submit" id="next" name="nex" class="btn btn-primary">Next </button>
               </form>
                  <?php }
@@ -218,6 +218,7 @@ require 'funtion/DATABASE_FUNCTION.php';
                  else {
                    // code...
                    echo "<script type='text/javascript'>document.getElementById('sup').disabled = true;</script>";
+                 }
                  ?>
 
                     <hr>
@@ -328,7 +329,7 @@ require 'funtion/DATABASE_FUNCTION.php';
           <!-- sidebar -->
           <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
           <script src="js/custom.js"></script>
-          <script src="js/validazione.js"></script>
+          <script src="js/valida.js"></script>
           <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
 <script>

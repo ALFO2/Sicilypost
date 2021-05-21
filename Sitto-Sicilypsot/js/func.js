@@ -1,4 +1,3 @@
-
 function validazione(inputtxt,tipo)
 {
  switch (tipo) {
@@ -8,18 +7,11 @@ function validazione(inputtxt,tipo)
          if(inputtxt.value == "") {
          return 0;
          }
-         if(inputtxt.value.length < 8) {
-          return 0;
+         if(inputtxt.value.length > 8) {
+          return 1;
          }
-
-         if(inputtxt.value.match(passw))
-         {
-         return 1;
-         }
-         else
-         {
          return 0;
-         }
+
  break;
 
  case "nome":
@@ -98,7 +90,7 @@ function va_login(var1,var2,var3) {
        if (x==1)
           {
               document.getElementById(var2).innerHTML = null  ;
-              l=1
+              l=1;
           }
        else
           {
@@ -109,9 +101,8 @@ function va_login(var1,var2,var3) {
 
 }
 
-function Ajax(str) {
+function Ajax(var2) {
    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET","Profilo.php?q=" + str, true);
+    xmlhttp.open("GET",var2, true);
     xmlhttp.send();
   }
-}
