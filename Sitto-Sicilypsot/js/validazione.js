@@ -51,7 +51,7 @@ function validazione(inputtxt,tipo)
  break;
 
  case "cf":
- if(inputtxt.value.length < 16) {
+ if(inputtxt.value.length < 17) {
   return 1;
  }
  return 0;
@@ -73,7 +73,15 @@ function solonumeri(var1,var2)
   }
 
 }
-
+function see(var1,var2){
+  if (document.getElementById(var1).checked == true) {
+    document.getElementById(var2).type="text";
+  }else
+  {
+    document.getElementById(var2).type="password";
+  }
+  
+}
 function uguale(var1,var2,var3)
 {
   if (var1==var2) {

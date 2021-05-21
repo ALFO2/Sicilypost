@@ -1,6 +1,26 @@
 <?php session_start();
 require 'funtion/function.php';
-require 'Generale.php';
+require 'funtion/DATABASE_FUNCTION.php';
+ $nome =SQL('Select nome from utente','nome');
+ echo $nome[0];
+ 
+ 
+     if ($_SERVER["REQUEST_METHOD"]=="POST") {
+         if (isset($_POST['signin'])) {
+          $nome=$_POST['nome'];
+          $email=$_POST['email'];
+          $password=$_POST['password'];
+           
+
+           if (BOOL_SQl("Select nome from utente where nome=".$nome)) {
+             echo "si esiste";
+           }
+           else
+           {
+             echo "no esist";
+           }
+         }
+     }
 
 ?>
 <!DOCTYPE html>
@@ -40,9 +60,9 @@ require 'Generale.php';
 
 <body class="main-layout">
   <!-- loader  -->
-  <div class="loader_bg">
+  <!--<div class="loader_bg">
     <div class="loader"><img src="images/loading.gif" alt="#" /></div>
-  </div>
+  </div>-->
   <!-- end loader -->
   <!-- header -->
   <header>
@@ -83,7 +103,7 @@ require 'Generale.php';
         </div>
       </div>
     </div>
-
+    
 
     <!-- header inner -->
     <div class="header-top">
@@ -478,7 +498,7 @@ And we ensure the safety and respect of your package</p>
 
 
 <script>
- document.getElementById("sign").disabled = true;
+ document.getElementById("sign").disabled = false;
 </script>
 <!-- google map js -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8eaHt9Dh5H57Zh0xVTqxVdBFCvFMqFjQ&callback=initMap"></script>

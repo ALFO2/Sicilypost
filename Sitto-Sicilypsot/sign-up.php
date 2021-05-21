@@ -1,4 +1,9 @@
-<?php session_start();?>
+<?php session_start();
+require 'funtion/function.php';
+require 'funtion/DATABASE_FUNCTION.php';
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,7 +63,7 @@
                   <label for="exampleInputName">Name</label>
 
 
-                  <input type="text" id="nome" oninput="myF()" name="nome" class="form-control"  placeholder="Name">
+                  <input type="text" id="nome" oninput="va_login('nome','enome','nome')" name="nome" class="form-control"  placeholder="Name">
 
 
                   <p style="color: red;" id="enome"></p>
@@ -69,15 +74,19 @@
 
 
 
-                  <input type="email" id="ema" oninput="myF()" name="email" class="form-control"  aria-describedby="emailHelp" placeholder="E-mail">
+                  <input type="email" id="ema" oninput="va_login('ema','eemail','email')" name="email" class="form-control"  aria-describedby="emailHelp" placeholder="E-mail">
 
 
                   <p style="color: red;" id="eemail"></p>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" id="pass" oninput="myF()" name="password" class="form-control"  placeholder="Password">
+                  <input type="password" id="pass" oninput="va_login('pass','epass','password')" name="password" class="form-control"  placeholder="Password">
                   <p style="color: red;" id="epass"></p>
+                </div>
+                <div class="round">
+                <input type="checkbox" id="checkbox1" onclick="see('checkbox1','pass')"/> &nbsp; Show Password
+                <label for="checkbox"></label>
                 </div>
                 <button type="submit" id="sign"  name="signin" class="btn btn-primary">Sign in</button>
               </form>
@@ -177,16 +186,16 @@
                 <div class="form-group">
                   <label for="exampleInputEmail1">E-mail </label>
 
-                  <input type="email" id="ema" oninput="va_login('ema','em','nome')" class="form-control" aria-describedby="emailHelp" placeholder="E-mail">
-                  <p style="color: red;" id="em"></p>
+                  <input type="email" id="email2" oninput="va_login('email2','emai','email')" class="form-control" aria-describedby="emailHelp" placeholder="E-mail">
+                  <p style="color: red;" id="emai"></p>
 
                 </div>
 
                 <div class="form-group">
 
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" id="pass" oninput="va_login('pass','pas','password')" class="form-control"   placeholder="Password">
-                  <p style="color: red;"  id="pas"></p>
+                  <input type="password" id="Passwo" oninput="va_login('Passwo','passw','password')" class="form-control"   placeholder="Password">
+                  <p style="color: red;"  id="passw"></p>
 
                 </div>
                 <div class="form-group">
@@ -196,14 +205,12 @@
                   <p style="color: red;" id="pas1"></p>
 
                 </div>
-                <div class="">
+               
                 <div class="round">
-
-                <input type="checkbox" id="checkbox" onclick="sewpass()"/> &nbsp; Show Password
+                <input type="checkbox" id="checkbox" onclick="see('checkbox','Passwo')"/> &nbsp; Show Password
                 <label for="checkbox"></label>
                 </div>
-                </div>
-
+            
                 <button type="submit" id="next" name="nex" class="btn btn-primary">Next </button>
               </form>
                  <?php }
@@ -244,7 +251,6 @@
                 </div>
 
                 <button type="submit" id="sup" class="btn btn-primary">Sign Up</button>
-              <?php } ?>
                   <a href="sign-in.phph" data-toggle="modal" data-target="#exampleModal">Sign in </a>
               </form>
             </div>
