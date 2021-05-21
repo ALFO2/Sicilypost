@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 20, 2021 alle 01:26
--- Versione del server: 10.4.19-MariaDB
--- Versione PHP: 8.0.6
+-- Generation Time: May 21, 2021 at 08:55 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `addetto`
+-- Table structure for table `addetto`
 --
 
 CREATE TABLE `addetto` (
@@ -39,7 +39,7 @@ CREATE TABLE `addetto` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `arrivo`
+-- Table structure for table `arrivo`
 --
 
 CREATE TABLE `arrivo` (
@@ -54,7 +54,7 @@ CREATE TABLE `arrivo` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `carta`
+-- Table structure for table `carta`
 --
 
 CREATE TABLE `carta` (
@@ -68,7 +68,7 @@ CREATE TABLE `carta` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `csr`
+-- Table structure for table `csr`
 --
 
 CREATE TABLE `csr` (
@@ -82,7 +82,7 @@ CREATE TABLE `csr` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `pacco`
+-- Table structure for table `pacco`
 --
 
 CREATE TABLE `pacco` (
@@ -98,7 +98,20 @@ CREATE TABLE `pacco` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `punti_di_transito`
+-- Table structure for table `prenotazione`
+--
+
+CREATE TABLE `prenotazione` (
+  `Id_prenotazinoe` int(11) NOT NULL,
+  `Cod_Utente` int(11) NOT NULL,
+  `data` int(11) NOT NULL,
+  `Cod_Adetto` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `punti_di_transito`
 --
 
 CREATE TABLE `punti_di_transito` (
@@ -110,7 +123,7 @@ CREATE TABLE `punti_di_transito` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `regione`
+-- Table structure for table `regione`
 --
 
 CREATE TABLE `regione` (
@@ -118,10 +131,31 @@ CREATE TABLE `regione` (
   `Nome_regione` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `regione`
+--
+
+INSERT INTO `regione` (`Id_regione`, `Nome_regione`) VALUES
+(1, 'milano');
+
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `so`
+-- Table structure for table `ritiro_consegna`
+--
+
+CREATE TABLE `ritiro_consegna` (
+  `Id_Ritiro_Consegna` int(11) NOT NULL,
+  `Cod_pacco` int(11) NOT NULL,
+  `Cod_prenotazione` int(11) NOT NULL,
+  `data` date NOT NULL,
+  `ora` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `so`
 --
 
 CREATE TABLE `so` (
@@ -135,7 +169,7 @@ CREATE TABLE `so` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `transito`
+-- Table structure for table `transito`
 --
 
 CREATE TABLE `transito` (
@@ -152,13 +186,13 @@ CREATE TABLE `transito` (
 -- --------------------------------------------------------
 
 --
--- Struttura della tabella `utente`
+-- Table structure for table `utente`
 --
 
 CREATE TABLE `utente` (
   `Id_Utente` int(11) NOT NULL,
-  `Nome` text NOT NULL,
-  `Cognome` text NOT NULL,
+  `Nome` varchar(25) NOT NULL,
+  `Cognome` varchar(25) NOT NULL,
   `Età` int(11) NOT NULL,
   `Cod_fc` varchar(16) NOT NULL,
   `Email` varchar(50) NOT NULL,
@@ -171,17 +205,24 @@ CREATE TABLE `utente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Indici per le tabelle scaricate
+-- Dumping data for table `utente`
+--
+
+INSERT INTO `utente` (`Id_Utente`, `Nome`, `Cognome`, `Età`, `Cod_fc`, `Email`, `Password`, `Via`, `Citta`, `N_Civ`, `Cap`, `Regione`) VALUES
+(4, 'paul', 'alarcon', 18, 'asdfghjklzxcvbnm', 'pauloalarcon76@gmail.com', 'PaulG12mmss', 'via per imbersago', 'milano', 51, '20092', 1);
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Indici per le tabelle `addetto`
+-- Indexes for table `addetto`
 --
 ALTER TABLE `addetto`
   ADD PRIMARY KEY (`Id_Addetto`);
 
 --
--- Indici per le tabelle `arrivo`
+-- Indexes for table `arrivo`
 --
 ALTER TABLE `arrivo`
   ADD PRIMARY KEY (`Id_Arrivo`),
@@ -190,27 +231,34 @@ ALTER TABLE `arrivo`
   ADD KEY `Cod_punto_arrivo` (`Cod_punto_arrivo`);
 
 --
--- Indici per le tabelle `carta`
+-- Indexes for table `carta`
 --
 ALTER TABLE `carta`
   ADD KEY `Cod_Utente` (`Cod_Utente`);
 
 --
--- Indici per le tabelle `csr`
+-- Indexes for table `csr`
 --
 ALTER TABLE `csr`
   ADD PRIMARY KEY (`Id_CSR`),
   ADD KEY `Cod_regione` (`Cod_regione`);
 
 --
--- Indici per le tabelle `pacco`
+-- Indexes for table `pacco`
 --
 ALTER TABLE `pacco`
   ADD PRIMARY KEY (`Id_Pacco`),
   ADD KEY `Cod_Mitente` (`Cod_Mitente`);
 
 --
--- Indici per le tabelle `punti_di_transito`
+-- Indexes for table `prenotazione`
+--
+ALTER TABLE `prenotazione`
+  ADD PRIMARY KEY (`Id_prenotazinoe`),
+  ADD KEY `Cod_Utente` (`Cod_Utente`);
+
+--
+-- Indexes for table `punti_di_transito`
 --
 ALTER TABLE `punti_di_transito`
   ADD PRIMARY KEY (`Id_punti_di_transito`),
@@ -218,20 +266,27 @@ ALTER TABLE `punti_di_transito`
   ADD KEY `Cod_csr` (`Cod_csr`);
 
 --
--- Indici per le tabelle `regione`
+-- Indexes for table `regione`
 --
 ALTER TABLE `regione`
   ADD PRIMARY KEY (`Id_regione`);
 
 --
--- Indici per le tabelle `so`
+-- Indexes for table `ritiro_consegna`
+--
+ALTER TABLE `ritiro_consegna`
+  ADD PRIMARY KEY (`Id_Ritiro_Consegna`),
+  ADD KEY `Cod_prenotazione` (`Cod_prenotazione`);
+
+--
+-- Indexes for table `so`
 --
 ALTER TABLE `so`
   ADD PRIMARY KEY (`Id_SO`),
   ADD KEY `Cod_CSR` (`Cod_CSR`);
 
 --
--- Indici per le tabelle `transito`
+-- Indexes for table `transito`
 --
 ALTER TABLE `transito`
   ADD PRIMARY KEY (`Id_Transito`),
@@ -240,76 +295,88 @@ ALTER TABLE `transito`
   ADD KEY `Cod_addetto` (`Cod_addetto`);
 
 --
--- Indici per le tabelle `utente`
+-- Indexes for table `utente`
 --
 ALTER TABLE `utente`
   ADD PRIMARY KEY (`Id_Utente`),
   ADD KEY `Regione` (`Regione`);
 
 --
--- AUTO_INCREMENT per le tabelle scaricate
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT per la tabella `addetto`
+-- AUTO_INCREMENT for table `addetto`
 --
 ALTER TABLE `addetto`
   MODIFY `Id_Addetto` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT per la tabella `arrivo`
+-- AUTO_INCREMENT for table `arrivo`
 --
 ALTER TABLE `arrivo`
   MODIFY `Id_Arrivo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT per la tabella `csr`
+-- AUTO_INCREMENT for table `csr`
 --
 ALTER TABLE `csr`
   MODIFY `Id_CSR` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT per la tabella `pacco`
+-- AUTO_INCREMENT for table `pacco`
 --
 ALTER TABLE `pacco`
   MODIFY `Id_Pacco` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT per la tabella `punti_di_transito`
+-- AUTO_INCREMENT for table `prenotazione`
+--
+ALTER TABLE `prenotazione`
+  MODIFY `Id_prenotazinoe` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `punti_di_transito`
 --
 ALTER TABLE `punti_di_transito`
   MODIFY `Id_punti_di_transito` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT per la tabella `regione`
+-- AUTO_INCREMENT for table `regione`
 --
 ALTER TABLE `regione`
-  MODIFY `Id_regione` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_regione` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT per la tabella `so`
+-- AUTO_INCREMENT for table `ritiro_consegna`
+--
+ALTER TABLE `ritiro_consegna`
+  MODIFY `Id_Ritiro_Consegna` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `so`
 --
 ALTER TABLE `so`
   MODIFY `Id_SO` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT per la tabella `transito`
+-- AUTO_INCREMENT for table `transito`
 --
 ALTER TABLE `transito`
   MODIFY `Id_Transito` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT per la tabella `utente`
+-- AUTO_INCREMENT for table `utente`
 --
 ALTER TABLE `utente`
-  MODIFY `Id_Utente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Utente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Limiti per le tabelle scaricate
+-- Constraints for dumped tables
 --
 
 --
--- Limiti per la tabella `arrivo`
+-- Constraints for table `arrivo`
 --
 ALTER TABLE `arrivo`
   ADD CONSTRAINT `arrivo_ibfk_1` FOREIGN KEY (`Cod_Pacco`) REFERENCES `pacco` (`Id_Pacco`),
@@ -317,38 +384,50 @@ ALTER TABLE `arrivo`
   ADD CONSTRAINT `arrivo_ibfk_3` FOREIGN KEY (`Cod_punto_arrivo`) REFERENCES `transito` (`Id_Transito`);
 
 --
--- Limiti per la tabella `carta`
+-- Constraints for table `carta`
 --
 ALTER TABLE `carta`
   ADD CONSTRAINT `carta_ibfk_1` FOREIGN KEY (`Cod_Utente`) REFERENCES `utente` (`Id_Utente`);
 
 --
--- Limiti per la tabella `csr`
+-- Constraints for table `csr`
 --
 ALTER TABLE `csr`
   ADD CONSTRAINT `csr_ibfk_1` FOREIGN KEY (`Cod_regione`) REFERENCES `regione` (`Id_regione`);
 
 --
--- Limiti per la tabella `pacco`
+-- Constraints for table `pacco`
 --
 ALTER TABLE `pacco`
   ADD CONSTRAINT `pacco_ibfk_1` FOREIGN KEY (`Cod_Mitente`) REFERENCES `utente` (`Id_Utente`);
 
 --
--- Limiti per la tabella `punti_di_transito`
+-- Constraints for table `prenotazione`
+--
+ALTER TABLE `prenotazione`
+  ADD CONSTRAINT `prenotazione_ibfk_1` FOREIGN KEY (`Cod_Utente`) REFERENCES `utente` (`Id_Utente`);
+
+--
+-- Constraints for table `punti_di_transito`
 --
 ALTER TABLE `punti_di_transito`
   ADD CONSTRAINT `punti_di_transito_ibfk_1` FOREIGN KEY (`Cod_so`) REFERENCES `so` (`Id_SO`),
   ADD CONSTRAINT `punti_di_transito_ibfk_2` FOREIGN KEY (`Cod_csr`) REFERENCES `csr` (`Id_CSR`);
 
 --
--- Limiti per la tabella `so`
+-- Constraints for table `ritiro_consegna`
+--
+ALTER TABLE `ritiro_consegna`
+  ADD CONSTRAINT `ritiro_consegna_ibfk_1` FOREIGN KEY (`Cod_prenotazione`) REFERENCES `prenotazione` (`Id_prenotazinoe`);
+
+--
+-- Constraints for table `so`
 --
 ALTER TABLE `so`
   ADD CONSTRAINT `so_ibfk_1` FOREIGN KEY (`Cod_CSR`) REFERENCES `csr` (`Id_CSR`);
 
 --
--- Limiti per la tabella `transito`
+-- Constraints for table `transito`
 --
 ALTER TABLE `transito`
   ADD CONSTRAINT `transito_ibfk_1` FOREIGN KEY (`Cod_pacco`) REFERENCES `pacco` (`Id_Pacco`),
@@ -356,7 +435,7 @@ ALTER TABLE `transito`
   ADD CONSTRAINT `transito_ibfk_3` FOREIGN KEY (`Cod_addetto`) REFERENCES `addetto` (`Id_Addetto`);
 
 --
--- Limiti per la tabella `utente`
+-- Constraints for table `utente`
 --
 ALTER TABLE `utente`
   ADD CONSTRAINT `utente_ibfk_1` FOREIGN KEY (`Regione`) REFERENCES `regione` (`Id_regione`);
