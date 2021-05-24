@@ -243,6 +243,7 @@ require 'funtion/DATABASE_FUNCTION.php';
              $ncasa=$_POST['1ncasa'];
              $cap=$_POST['1cap'];
              $regione=$_POST['1regione'];
+
              $nome=$_POST['1nome'];
              $cognome=$_POST['1cognome'];
              $codice_fiscale=$_POST['1cf'];
@@ -251,11 +252,19 @@ require 'funtion/DATABASE_FUNCTION.php';
              $email=$_POST['1email'];
              $password=$_POST['1password'];
               if (registra($citta,$indirizzo,$ncasa,$cap,$regione,$nome,$cognome,$codice_fiscale,$eta,$sex,$email,$password)) {
-
+                  $pass= password_hash($password, PASSWORD_DEFAULT);
+                  if (BOOL_SQL('INSERT INTO utente("nome", "Cognome", "eta","cod_fc","email","password","via","n_civ","cap","Cod_regione")
+VALUES ('.$nome.', '. $cognome.', '.$eta.','.$codice_fiscale.','.$email.','.$pass.','.$indirizzo.','. $ncasa.','.$cap.','.$regione.')')) {
+                    echo 'buon fine';
+                  }
+                  else 
+                  {
+                    Echo 'no buono';
+                  }
               }
               else
               {
-                
+                echo 'validazione errata';
               }
             }
             ?>
