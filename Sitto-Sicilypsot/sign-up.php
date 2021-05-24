@@ -2,7 +2,6 @@
 require 'funtion/function.php';
 require 'funtion/DATABASE_FUNCTION.php';
 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,9 +41,7 @@ require 'funtion/DATABASE_FUNCTION.php';
 
 <body class="main-layout">
   <!-- loader  -->
-  <div class="loader_bg">
-    <div class="loader"><img src="images/imabella.jpeg" alt="#" style="width: 100%;" /> </div>
-  </div>
+
   <!-- end loader -->
   <!-- header -->
   <header>
@@ -136,57 +133,51 @@ require 'funtion/DATABASE_FUNCTION.php';
 
 
 
-            <div class="column " id="main">
+       <div class="column " id="main">
               <h1 id="textm">Sign Up </h1>
-              <script type="text/javascript"></script>
               <h3 id="textm">Welcome to SicilyPost ; ) we're here for you</h3>
-              <?php
 
-              if (!isset($_POST['nex'])) {
-                echo "<script > </script>";
-              ?>
               <form method="post">
                   <hr>
                 <div class="form-group">
                   <label for="exampleInputName">Name</label>
 
-                  <input type="text" id="perosna" oninput="va_login('perosna','nom','nome')" class="form-control" placeholder="Name">
+                  <input type="text" id="perosna" name="1nome" oninput="va_login('perosna','nom','nome')" class="form-control" placeholder="Name">
                   <p style="color: red;" id="nom"></p>
 
                 </div>
                 <div class="form-group">
                   <label for="exampleInputName">Lastname</label>
 
-                  <input type="text" id="lasname" oninput="va_login('lasname','laname','nome')" class="form-control" placeholder="Lastname">
+                  <input type="text" id="lasname" name="1cognome" oninput="va_login('lasname','laname','nome')" class="form-control" placeholder="Lastname">
                   <p style="color: red;" id="laname"></p>
 
                 </div>
                 <div class="form-group">
                   <label for="exampleInputName">Fiscal Code</label>
 
-                  <input type="text" id="cfi" oninput="va_login('cfi','fc','cf')" class="form-control"  placeholder="Fiscal Code">
+                  <input type="text" id="cfi" name="1cf" oninput="va_login('cfi','fc','cf')" class="form-control"  placeholder="Fiscal Code">
                   <p style="color: red;" id="fc"></p>
 
                 </div>
                 <div class="form-group ">
                   <label for="exampleInputName">Age</label>
 
-                  <input style="width:20%;"  oninput="solonumeri('numero',3)" type="number" id="numero"  min="0" max="95" class="form-control num"  placeholder="0">
+                  <input style="width:20%;"  name="1eta" oninput="solonumeri('numero',3)" type="number" id="numero"  min="0" max="95" class="form-control num"  placeholder="0">
                   <p style="color: red;" id="ag"></p>
 
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputName">sex</label><br>
-              <input type="radio" name="radiogroup1" value="male"id="rd1">
+              <input type="radio" name="1sesso" value="male"id="rd1">
               <label for="rd1" >Male</label>
-               <input type="radio" name="radiogroup1" value="female" id="rd2">
+               <input type="radio" name="1sesso" value="female" id="rd2">
                 <label for="rd2">Female</label>
               </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">E-mail </label>
-
-                  <input type="email" id="email2" oninput="va_login('email2','emai','email')" class="form-control" aria-describedby="emailHelp" placeholder="E-mail">
+                  <label for="">E-mail </label>
+                  <input type="email" id="email2" name="1email" oninput="va_login('email2','emai','email')" class="form-control"  placeholder="E-mail">
                   <p style="color: red;" id="emai"></p>
 
                 </div>
@@ -194,7 +185,7 @@ require 'funtion/DATABASE_FUNCTION.php';
                 <div class="form-group">
 
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" id="Passwo" oninput="va_login('Passwo','passw','password')" class="form-control"   placeholder="Password">
+                  <input type="password" id="Passwo" name="1password" oninput="va_login('Passwo','passw','password')" class="form-control"   placeholder="Password">
                   <p style="color: red;"  id="passw"></p>
 
                 </div>
@@ -210,51 +201,65 @@ require 'funtion/DATABASE_FUNCTION.php';
                 <input type="checkbox" id="checkbox" onclick="see('checkbox','Passwo')"/> &nbsp; Show Password
                 <label for="checkbox"></label>
                 </div>
-
-                <button type="submit" id="next" name="nex" class="btn btn-primary">Next </button>
-              </form>
-                 <?php }
-
-                 else {
-                   // code...
-                   echo "<script type='text/javascript'>document.getElementById('sup').disabled = true;</script>";
-                 }
-                 ?>
-
                     <hr>
-              <form class="" method="post">
+
                 <div class="form-group">
                   <label for="exampleInputName">city</label>
-                  <input type="text" oninput="va_login('citt','cittn','nome')" class="form-control" value="sdhsdsd" id="citt" placeholder="city">
+                  <input type="text" name="1citta" oninput="va_login('citt','cittn','nome')" class="form-control"  id="citt" placeholder="city">
                   <p id="cittn"></p>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputName">address</label>
-                  <input type="text" oninput="va_login('indir','indirn','nome')" class="form-control" id="indir" placeholder="address">
+                  <input type="text" name="1indirizzo" oninput="va_login('indir','indirn','nome')" class="form-control" id="indir" placeholder="address">
                   <p id="indirn"></p>
                 </div>
                 <div class="form-group ">
                   <label for="exampleInputName">House number</label>
-                  <input style="width:20%;" oninput="solonumeri('nume',8)" type="number"  value="0" min="0" class="form-control num" id="nume" placeholder="0">
+                  <input style="width:20%;" name="1ncasa" oninput="solonumeri('nume',8)" type="number"  value="0" min="0" class="form-control num" id="nume" placeholder="0">
                   <p id="numen"></p>
                 </div>
                 <div class="form-group">
                   <div class="form-group ">
                     <label for="exampleInputName">CAP</label>
-                    <input style="width:20%;" oninput="solonumeri('ca',7)" type="number"  value="0" min="0" class="form-control num" id="ca" placeholder="2..">
+                    <input style="width:20%;" name="1cap" oninput="solonumeri('ca',7)" type="number"  value="0" min="0" class="form-control num" id="ca" placeholder="2..">
                     <p id="can"></p>
                   </div>
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Region</label>
-                  <input type="text" oninput="va_login('rego','regon','nome')" class="form-control" id="rego" aria-describedby="emailHelp" placeholder="Region">
+                  <input type="text" name="1regione" oninput="va_login('rego','regon','nome')" class="form-control" id="rego" aria-describedby="emailHelp" placeholder="Region">
                   <p id="regon"></p>
                 </div>
 
-                <button type="submit" id="sup" class="btn btn-primary">Sign Up</button>
-                  <a href="sign-in.phph" data-toggle="modal" data-target="#exampleModal">Sign in </a>
+                <button type="submit" id="sup" name="sup" class="btn btn-primary">Sign Up</button>
+
+                  </div>
               </form>
-            </div>
+              <a href="sign-in.phph" data-toggle="modal" data-target="#exampleModal">Sign in </a>
+            <?php
+            if (isset($_POST['sup'])) {
+             $citta=$_POST['1citta'];
+             $indirizzo=$_POST['1indirizzo'];
+             $ncasa=$_POST['1ncasa'];
+             $cap=$_POST['1cap'];
+             $regione=$_POST['1regione'];
+             $nome=$_POST['1nome'];
+             $cognome=$_POST['1cognome'];
+             $codice_fiscale=$_POST['1cf'];
+             $eta=$_POST['1eta'];
+             $sex=$_POST['1sesso'];
+             $email=$_POST['1email'];
+             $password=$_POST['1password'];
+              if (registra($citta,$indirizzo,$ncasa,$cap,$regione,$nome,$cognome,$codice_fiscale,$eta,$sex,$email,$password)) {
+
+              }
+              else
+              {
+                
+              }
+            }
+            ?>
+
 
 
          </div>
@@ -329,16 +334,11 @@ require 'funtion/DATABASE_FUNCTION.php';
           <!-- sidebar -->
           <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
           <script src="js/custom.js"></script>
-          <script src="js/valida.js"></script>
+          <script src="js/func.js"></script>
           <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
 <script>
-  if (document.getElementById('next')){
-   document.getElementById('next').disabled = true;
-  }
-   if (document.getElementById('sup')){
-   document.getElementById('sup').disabled = true;
-  }
+
 </script>
 
 

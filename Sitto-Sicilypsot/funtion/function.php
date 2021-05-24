@@ -15,6 +15,13 @@ function validation($data,$type)
      }
         return 1;
      break;
+     case 'numero':
+     if( $data=="" || preg_match('@[^\w]@',  $data) || strlen( $data) > 3)
+     {
+       return 0;
+     }
+        return 1;
+       break;
    case 'text':
        // code...
   		 $data= str_replace(' ', '',$data);
@@ -173,4 +180,11 @@ function login($nome,$email,$password)
 }
 
 
+function registra($citta,$indirizzo,$ncasa,$cap,$regione,$nome,$cognome,$codice_fiscale,$eta,$sex,$email,$password)
+{
+    if (validation($citta,'text') && validation($indirizzo,'text') && validation($ncasa,'numero') && validation($nome,'nome') ) {
+      return 1;
+    }
+    return 0;
+}
  ?>

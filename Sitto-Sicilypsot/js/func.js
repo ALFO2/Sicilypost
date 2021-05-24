@@ -1,3 +1,6 @@
+
+var cont=0;
+
 function validazione(inputtxt,tipo)
 {
  switch (tipo) {
@@ -84,20 +87,18 @@ function uguale(var1,var2,var3)
 }
 
 
-function va_login(var1,var2,var3) {
+function va_login(var1,var2,var3,var4) {
        var x =validazione(document.getElementById(var1),var3);
-       var l=0;
-       if (x==1)
+           if (x==1)
           {
               document.getElementById(var2).innerHTML = null  ;
-              l=1;
+              return 1;
           }
        else
           {
               document.getElementById(var2).innerHTML = "nome non valido"  ;
-              document.getElementById(sign).disabled = true;
-              l=0;
-          }
+              return 0;
+            }
 
 }
 
