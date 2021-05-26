@@ -181,7 +181,7 @@ if (!isset($_SESSION["utente"]))
                <div class="menu-area">
                 <div class="limit-box">
                   <nav class="main-menu ">
-                    <ul class="menu-area-main" style="height: 30px;">
+                    <ul class="menu-area-main" style="height: 90px;">
                       <li class=""> <a href="index.php">Home</a> </li>
                       <li class=""> <a role="button" href="index.php" onclick="Ajax('Profilo.php?q=esci')" class="debatebtn">Esci</a></li>
                       <?php if (isset($_REQUEST["q"])) { if($_REQUEST["q"]=='esci') {session_unset(); session_destroy();}} ?>
@@ -190,6 +190,8 @@ if (!isset($_SESSION["utente"]))
                    </nav>
                  </div>
                </div>
+
+               
               </div>
            </div>
          </div>

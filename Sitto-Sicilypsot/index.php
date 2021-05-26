@@ -47,13 +47,37 @@ require 'funtion/DATABASE_FUNCTION.php';
   <!-- end loader -->
   <!-- header -->
   <header>
+    <?php
+           if ($_SERVER["REQUEST_METHOD"]=="POST") {
+               if (isset($_POST['signin'])) {
+                $nome=$_POST['nome'];
+                $email=$_POST['email'];
+                $password=$_POST['password'];
 
+                 if (login($nome,$email,$password)) {
+                   $_SESSION["utente"]=SQL("Select Codice_fiscale from utente where nome='".$nome."' and email='".$email."'",'Codice_fiscale');
+                 }
+                 else
+                 {
+                   echo '
+                   <div class="alert alert-warning alert-dismissible fade show" style="margin:0px;" role="alert">
+                     <strong>Holy guacamole!</strong> Non hai inserito i dati corretti.
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                     </button>
+                   </div>
+                   ';
+                 }
+               }
+              }
+
+     ?>
     <!-- Modal -->
     <div class="modal fade row" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog  col-xl-2" id="sii" role="document">
         <div class="modal-content " id="modalcontent" style="height:700px;">
 
-             
+
           <div class=" ">
             <div class="column " id="main">
 
@@ -88,40 +112,22 @@ require 'funtion/DATABASE_FUNCTION.php';
         </div>
       </div>
     </div>
-   <?php
-          if ($_SERVER["REQUEST_METHOD"]=="POST") {
-              if (isset($_POST['signin'])) {
-               $nome=$_POST['nome'];
-               $email=$_POST['email'];
-               $password=$_POST['password'];
 
-                if (login($nome,$email,$password)) {
-                  $_SESSION["utente"]=SQL("Select Cod_fc from utente where nome='".$nome."' and email='".$email."'",'Cod_fc');
-                }
-                else
-                {
-                  echo "no esist";
-                }
-              }
-             }
-
-    ?>
     <!-- header inner -->
     <div class="header-top">
-      <div class="header">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-xl-2 col-lg-4 col-md-4 col-sm-3 col logo_section">
-              <div class="full">
-                <div class="center-desk">
-                  <div class="logo">
-                    <a href="index.php"> <h1>Sicilypost</h1> </a>
+          <div class="header">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xl-2 col-lg-4 col-md-4 col-sm-3 col logo_section">
+                  <div class="full">
+                    <div class="center-desk">
+                      <div class="logo">
+                        <a href="index.php"> <h1>Sicilypost</h1> </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-xl-10 col-lg-8 col-md-8 col-sm-9">
-
+                <div class="col-xl-10 col-lg-8 col-md-8 col-sm-9">
                <div class="menu-area">
                 <div class="limit-box">
                   <nav class="main-menu ">
@@ -141,6 +147,7 @@ require 'funtion/DATABASE_FUNCTION.php';
                    </nav>
                  </div>
                </div>
+
               </div>
            </div>
          </div>
@@ -493,11 +500,11 @@ And we ensure the safety and respect of your package</p>
           <script src="js/popper.min.js"></script>
           <script src="js/bootstrap.bundle.min.js"></script>
           <script src="js/jquery-3.0.0.min.js"></script>
-
+          <script src="js/plugin.js"></script>
           <!-- sidebar -->
           <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
           <script src="js/custom.js"></script>
-          <script src="js/func.js"></script>
+            <script src="js/func.js"></script>
           <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
 

@@ -10,10 +10,13 @@ function validazione(inputtxt,tipo)
          if(inputtxt.value == "") {
          return 0;
          }
-         if(inputtxt.value.length > 8) {
-          return 1;
+         if(!inputtxt.value.match(/[0-9]/g) && !inputtxt.value.match(/[^-\w]/g) && !inputtxt.value.match(/[a-z]/g) && inputtxt.value.length < 8 )
+         {
+          return 0;
          }
-         return 0;
+         else {
+           return 1;
+         }
 
  break;
 
@@ -81,9 +84,10 @@ function see(var1,var2){
 
 function uguale(var1,var2,var3)
 {
-  if (var1==var2) {
-  document.getElementById(var3).innerHTML = 'non uguale'  ;
+  if (document.getElementById(var1).value==document.getElementById(var2).value) {
+  document.getElementById(var3).innerHTML = 'Uguale'  ;
   }
+
 }
 
 
@@ -96,7 +100,7 @@ function va_login(var1,var2,var3,var4) {
           }
        else
           {
-              document.getElementById(var2).innerHTML = "nome non valido"  ;
+              document.getElementById(var2).innerHTML = "Non vadido"  ;
               return 0;
             }
 

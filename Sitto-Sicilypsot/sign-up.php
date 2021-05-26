@@ -48,32 +48,52 @@ require 'funtion/DATABASE_FUNCTION.php';
 
     <!-- Modal -->
 
+    <?php
+           if ($_SERVER["REQUEST_METHOD"]=="POST") {
+               if (isset($_POST['signin'])) {
+                $nome=$_POST['nome'];
+                $email=$_POST['email'];
+                $password=$_POST['password'];
+
+                 if (login($nome,$email,$password)) {
+                   $_SESSION["utente"]=SQL("Select Codice_fiscale from utente where nome='".$nome."' and email='".$email."'",'Codice_fiscale');
+                 }
+                 else
+                 {
+                   echo '
+                   <div class="alert alert-warning alert-dismissible fade show" style="margin:0px;" role="alert">
+                     <strong>Holy guacamole!</strong> Non hai inserito i dati corretti.
+                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                     </button>
+                   </div>
+                   ';
+                 }
+               }
+              }
+
+     ?>
+    <!-- Modal -->
     <div class="modal fade row" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog  col-xl-2" id="sii" role="document">
-        <div class="modal-content " style="height:700px;">
+        <div class="modal-content " id="modalcontent" style="height:700px;">
+
+
           <div class=" ">
             <div class="column " id="main">
-              <h1 id="textm">Sign Up </h1>
-              <h3 id="textm">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
+
+                <h1 id="textm">Sign Up </h1>
+               <h3 id="textm">Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
               <form method="post" >
                 <div class="form-group">
                   <label for="exampleInputName">Name</label>
-
-
                   <input type="text" id="nome" oninput="va_login('nome','enome','nome')" name="nome" class="form-control"  placeholder="Name">
-
-
                   <p style="color: red;" id="enome"></p>
                 </div>
                 <div class="form-group">
 
                 <label for="exampleInputEmail1">E-mail </label>
-
-
-
                   <input type="email" id="ema" oninput="va_login('ema','eemail','email')" name="email" class="form-control"  aria-describedby="emailHelp" placeholder="E-mail">
-
-
                   <p style="color: red;" id="eemail"></p>
                 </div>
                 <div class="form-group">
@@ -81,11 +101,12 @@ require 'funtion/DATABASE_FUNCTION.php';
                   <input type="password" id="pass" oninput="va_login('pass','epass','password')" name="password" class="form-control"  placeholder="Password">
                   <p style="color: red;" id="epass"></p>
                 </div>
-                <div class="round">
-                <input type="checkbox" id="checkbox1" onclick="see('checkbox1','pass')"/> &nbsp; Show Password
-                <label for="checkbox"></label>
+                <div class="">
+                  <label for="check" style="font-size:15px;">Check Password</label>
+                  <input type="checkbox"  id="cont" onclick="see('cont','pass')"  >
                 </div>
                 <button type="submit" id="sign"  name="signin" class="btn btn-primary">Sign in</button>
+                <a href="sign-up.php">Sign up</a>
               </form>
             </div>
           </div>
@@ -94,9 +115,7 @@ require 'funtion/DATABASE_FUNCTION.php';
     </div>
 
 
-    <script>
-    document.getElementById("sign").disabled = true;
-    </script>
+
 
     <!-- header inner -->
     <div class="header-top">
@@ -136,48 +155,71 @@ require 'funtion/DATABASE_FUNCTION.php';
        <div class="column " id="main">
               <h1 id="textm">Sign Up </h1>
               <h3 id="textm">Welcome to SicilyPost ; ) we're here for you</h3>
+<?php
 
+
+$citta='';
+$indirizzo='';
+$ncasa='';
+$cap='';
+$regione='';
+$nome='';
+$cognome='';
+$codice_fiscale='';
+$eta='';
+$email='';
+$password='';
+$conpassword='';
+if (isset($_POST['sup'])) {
+ $citta=$_POST['1citta'];
+ $indirizzo=$_POST['1indirizzo'];
+ $ncasa=$_POST['1ncasa'];
+ $cap=$_POST['1cap'];
+ $regione=$_POST['1regione'];
+
+ $nome=$_POST['1nome'];
+ $cognome=$_POST['1cognome'];
+ $codice_fiscale=$_POST['1cf'];
+ $eta=$_POST['1eta'];
+ $email=$_POST['1email'];
+ $password=$_POST['1password'];
+}
+?>
               <form method="post">
                   <hr>
                 <div class="form-group">
                   <label for="exampleInputName">Name</label>
 
-                  <input type="text" id="perosna" name="1nome" oninput="va_login('perosna','nom','nome')" class="form-control" placeholder="Name">
+                  <input type="text" id="perosna" name="1nome" value="<?php echo $nome; ?>" oninput="va_login('perosna','nom','nome')" class="form-control" placeholder="Name">
                   <p style="color: red;" id="nom"></p>
 
                 </div>
                 <div class="form-group">
                   <label for="exampleInputName">Lastname</label>
 
-                  <input type="text" id="lasname" name="1cognome" oninput="va_login('lasname','laname','nome')" class="form-control" placeholder="Lastname">
+                  <input type="text" id="lasname" name="1cognome" value="<?php echo $cognome; ?>" oninput="va_login('lasname','laname','nome')" class="form-control" placeholder="Lastname">
                   <p style="color: red;" id="laname"></p>
 
                 </div>
                 <div class="form-group">
                   <label for="exampleInputName">Fiscal Code</label>
 
-                  <input type="text" id="cfi" name="1cf" oninput="va_login('cfi','fc','cf')" class="form-control"  placeholder="Fiscal Code">
+                  <input type="text" id="cfi" name="1cf" oninput="va_login('cfi','fc','cf')" value="<?php echo $codice_fiscale; ?>" class="form-control"  placeholder="Fiscal Code">
                   <p style="color: red;" id="fc"></p>
 
                 </div>
                 <div class="form-group ">
                   <label for="exampleInputName">Age</label>
 
-                  <input style="width:20%;"  name="1eta" oninput="solonumeri('numero',3)" type="number" id="numero"  min="0" max="95" class="form-control num"  placeholder="0">
+                  <input style="width:20%;"  name="1eta" oninput="solonumeri('numero',3)" value="<?php echo $eta ?>" type="number" id="numero"  min="0" max="95" class="form-control num"  placeholder="0">
                   <p style="color: red;" id="ag"></p>
 
                 </div>
 
-                <div class="form-group">
-                  <label for="exampleInputName">sex</label><br>
-              <input type="radio" name="1sesso" value="male"id="rd1">
-              <label for="rd1" >Male</label>
-               <input type="radio" name="1sesso" value="female" id="rd2">
-                <label for="rd2">Female</label>
-              </div>
+
                 <div class="form-group">
                   <label for="">E-mail </label>
-                  <input type="email" id="email2" name="1email" oninput="va_login('email2','emai','email')" class="form-control"  placeholder="E-mail">
+                  <input type="email" id="email2" name="1email" oninput="va_login('email2','emai','email')" value="<?php echo $email ?>" class="form-control"  placeholder="E-mail">
                   <p style="color: red;" id="emai"></p>
 
                 </div>
@@ -185,15 +227,15 @@ require 'funtion/DATABASE_FUNCTION.php';
                 <div class="form-group">
 
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" id="Passwo" name="1password" oninput="va_login('Passwo','passw','password')" class="form-control"   placeholder="Password">
+                  <input type="password" id="Passwo" name="1password"  oninput="va_login('Passwo','passw','password')"  class="form-control"   placeholder="Password">
                   <p style="color: red;"  id="passw"></p>
 
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Confirmation Password</label>
 
-                  <input type="password" id="pass1" oninput="uguale('pass1','pass','pas1')" class="form-control"    placeholder="Confirmation Password">
-                  <p style="color: red;" id="pas1"></p>
+                  <input type="password" id="pass1" oninput="uguale('pass1','Passwo','pas1')" name="con_pass" class="form-control"    placeholder="Confirmation Password">
+                  <p style="color: Green;" id="pas1"></p>
 
                 </div>
 
@@ -205,30 +247,30 @@ require 'funtion/DATABASE_FUNCTION.php';
 
                 <div class="form-group">
                   <label for="exampleInputName">city</label>
-                  <input type="text" name="1citta" oninput="va_login('citt','cittn','nome')" class="form-control"  id="citt" placeholder="city">
-                  <p id="cittn"></p>
+                  <input type="text" name="1citta" oninput="va_login('citt','cittn','nome')" value="<?php echo $citta ?>" class="form-control"  id="citt" placeholder="city">
+                  <p style="color: red;" id="cittn"></p>
                 </div>
                 <div class="form-group">
                   <label for="exampleInputName">address</label>
-                  <input type="text" name="1indirizzo" oninput="va_login('indir','indirn','nome')" class="form-control" id="indir" placeholder="address">
-                  <p id="indirn"></p>
+                  <input type="text" name="1indirizzo" oninput="va_login('indir','indirn','nome')" value="<?php echo $indirizzo ?>" class="form-control" id="indir" placeholder="address">
+                  <p style="color: red;" id="indirn"></p>
                 </div>
                 <div class="form-group ">
                   <label for="exampleInputName">House number</label>
-                  <input style="width:20%;" name="1ncasa" oninput="solonumeri('nume',8)" type="number"  value="0" min="0" class="form-control num" id="nume" placeholder="0">
-                  <p id="numen"></p>
+                  <input style="width:20%;" name="1ncasa" oninput="solonumeri('nume',8)" type="number"  value="<?php echo $ncasa ?>"  min="0" class="form-control num" id="nume" placeholder="0">
+                  <p style="color: red;" id="numen"></p>
                 </div>
                 <div class="form-group">
                   <div class="form-group ">
                     <label for="exampleInputName">CAP</label>
-                    <input style="width:20%;" name="1cap" oninput="solonumeri('ca',7)" type="number"  value="0" min="0" class="form-control num" id="ca" placeholder="2..">
-                    <p id="can"></p>
+                    <input style="width:20%;" name="1cap" oninput="solonumeri('ca',7)" type="number" value="<?php echo $cap ?>" min="0" class="form-control num" id="ca" placeholder="2..">
+                    <p style="color: red;" id="can"></p>
                   </div>
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Region</label>
-                  <input type="text" name="1regione" oninput="va_login('rego','regon','nome')" class="form-control" id="rego" aria-describedby="emailHelp" placeholder="Region">
-                  <p id="regon"></p>
+                  <input type="text" name="1regione" oninput="va_login('rego','regon','nome')" class="form-control" id="rego" value="<?php echo $regione ?>" aria-describedby="emailHelp" placeholder="Region">
+                  <p style="color: red;" id="regon"></p>
                 </div>
 
                 <button type="submit" id="sup" name="sup" class="btn btn-primary">Sign Up</button>
@@ -236,7 +278,9 @@ require 'funtion/DATABASE_FUNCTION.php';
                   </div>
               </form>
               <a href="sign-in.phph" data-toggle="modal" data-target="#exampleModal">Sign in </a>
+                 </div>
             <?php
+
             if (isset($_POST['sup'])) {
              $citta=$_POST['1citta'];
              $indirizzo=$_POST['1indirizzo'];
@@ -248,18 +292,33 @@ require 'funtion/DATABASE_FUNCTION.php';
              $cognome=$_POST['1cognome'];
              $codice_fiscale=$_POST['1cf'];
              $eta=$_POST['1eta'];
-             $sex=$_POST['1sesso'];
              $email=$_POST['1email'];
              $password=$_POST['1password'];
+             if (isset($_POST['con_pass'])) {
+              $conpassword=$_POST['con_pass'];
+             }
+             else {
+               $conpassword=0;
+             }
+            if(registra($citta,$indirizzo,$ncasa,$cap,$regione,$nome,$cognome,$codice_fiscale,$eta,$email,$password,$conpassword))
+            {
+              echo 'va bene';
+              header('Location: index.php');
+            }
+            else{
 
-              BOOL_SQL("INSERT INTO utente (Nome, Cognome, Età, COD_regione, Via, Città,N_civ, Cap, Codice_fiscale, Email, Password) VALUES ( '".$nome."', '".$cognome."', '".$eta."', '10', ".$indirizzo.", 'milano','".$ncasa."', '2077', 'sdadihaksfhkjhfsjk', '".$email."', 'marco.bello89');");
-                    
+              echo "non caricato
+              ";
+
+
+            }
               }
+
             ?>
 
 
 
-         </div>
+
 
 
 
