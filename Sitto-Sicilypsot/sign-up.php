@@ -251,22 +251,10 @@ require 'funtion/DATABASE_FUNCTION.php';
              $sex=$_POST['1sesso'];
              $email=$_POST['1email'];
              $password=$_POST['1password'];
-              if (registra($citta,$indirizzo,$ncasa,$cap,$regione,$nome,$cognome,$codice_fiscale,$eta,$sex,$email,$password)) {
-                  $pass= password_hash($password, PASSWORD_DEFAULT);
-                  if (BOOL_SQL('INSERT INTO utente("nome", "Cognome", "eta","cod_fc","email","password","via","n_civ","cap","Cod_regione")
-VALUES ('.$nome.', '. $cognome.', '.$eta.','.$codice_fiscale.','.$email.','.$pass.','.$indirizzo.','. $ncasa.','.$cap.','.$regione.')')) {
-                    echo 'buon fine';
-                  }
-                  else 
-                  {
-                    Echo 'no buono';
-                  }
+
+              BOOL_SQL("INSERT INTO utente (Nome, Cognome, Età, COD_regione, Via, Città,N_civ, Cap, Codice_fiscale, Email, Password) VALUES ( '".$nome."', '".$cognome."', '".$eta."', '10', ".$indirizzo.", 'milano','".$ncasa."', '2077', 'sdadihaksfhkjhfsjk', '".$email."', 'marco.bello89');");
+                    
               }
-              else
-              {
-                echo 'validazione errata';
-              }
-            }
             ?>
 
 

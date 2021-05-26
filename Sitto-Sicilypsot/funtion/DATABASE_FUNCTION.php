@@ -1,7 +1,7 @@
 <?php
 $domainDB='localhost';
 $user='root';
-$nome_db='sicilypost';
+$nome_db='db_sicilypost';
 $pass_db='';
 
 

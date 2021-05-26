@@ -53,7 +53,7 @@ require 'funtion/DATABASE_FUNCTION.php';
       <div class="modal-dialog  col-xl-2" id="sii" role="document">
         <div class="modal-content " id="modalcontent" style="height:700px;">
 
-
+             
           <div class=" ">
             <div class="column " id="main">
 
@@ -134,7 +134,7 @@ require 'funtion/DATABASE_FUNCTION.php';
                       <li> <a href="Profilo.php">Profile</a> </li>
                       <?php endif; ?>
                      <?php if (!isset($_SESSION["utente"])): ?>
-                     <li><a href="#"data-toggle="modal" data-target="#exampleModal">Sign in </a> </li>
+                     <li><a href="#" data-toggle="modal" data-target="#exampleModal">Sign in </a> </li>
                      <?php endif; ?>
                      <li> <a href="index.php"><img src="icon/icon_b.png" alt="#" /></a></li>
                      </ul>
