@@ -56,6 +56,7 @@ require 'funtion/DATABASE_FUNCTION.php';
 
                  if (login($nome,$email,$password)) {
                    $_SESSION["utente"]=SQL("Select Codice_fiscale from utente where nome='".$nome."' and email='".$email."'",'Codice_fiscale');
+                   echo "<script>location.assign('Profilo.php');</script>";
                  }
                  else
                  {

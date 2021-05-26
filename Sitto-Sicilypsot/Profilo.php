@@ -8,7 +8,7 @@ function Esci()
 }
 if (!isset($_SESSION["utente"]))
 {
-  header('Location: '.$_SERVER['PHP_SELF']);
+  header('Location: index.php' );
 }
 
 ?>
@@ -59,9 +59,9 @@ if (!isset($_SESSION["utente"]))
 
 <body class="main-layout">
   <!-- loader  -->
-  <div class="loader_bg">
-    <div class="loader"><img src="images/loading.gif" alt="#" /></div>
-  </div>
+  <!--<div class="loader_bg">-->
+  <!--  <div class="loader"><img src="images/loading.gif" alt="#" /></div>-->
+  <!--</div>-->
   <!-- end loader -->
   <!-- header -->
   <header>
@@ -191,7 +191,7 @@ if (!isset($_SESSION["utente"]))
                  </div>
                </div>
 
-               
+
               </div>
            </div>
          </div>
@@ -289,15 +289,33 @@ if (!isset($_SESSION["utente"]))
          <!-- Left Column -->
          <div class="w3-col m3">
            <!-- Profile -->
+           <?php
+           $a= $_SESSION['utente'];
+           $nome='SELECT nome from utente where codice_fiscale="'.$a[0].'"';
+           $nome=SQL($nome,'nome');
+           $nome=$nome[0];
+           $cognome='SELECT cognome from utente where codice_fiscale="'.$a[0].'"';
+           $cognome=SQL($cognome,'cognome');
+           $cognome=$cognome[0];
+           $eta='SELECT età from utente where codice_fiscale="'.$a[0].'"';
+           $eta=SQL($eta,'età');
+           $eta=$eta[0];
+           $citta='SELECT città from utente where codice_fiscale="'.$a[0].'"';
+           $citta=SQL($citta,'città');
+           $citta=$citta[0];
+           $regione='SELECT regione from regioni INNER join utente on utente.COD_regione=regioni.ID_regione and utente.codice_fiscale="'.$a[0].'"';
+           $regione=SQL($regione,'regione');
+           $regione=$regione[0];
+            ?>
            <div class="w3-card w3-round w3-white">
              <div class="w3-container">
-              <h4 class="w3-center">Paul Alarcon</h4>
               <p class="w3-center"><img src="https://png.pngtree.com/png-vector/20190223/ourlarge/pngtree-profile-line-black-icon-png-image_691051.jpg" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+               <h4 class="w3-center"><?php echo $nome.' '.$cognome;?> </h4>
               <hr>
-              <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> Student, UI</p>
-              <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> Milano, MI</p>
-              <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> August 15, 2002</p>
-              <p><i class="fa fa-address-card fa-fw w3-margin-right w3-text-theme"></i> Codice fiscale</p>
+
+              <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> <?php echo $citta.','.$regione;?></p>
+              <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> <?php echo $eta.' anni :)';?></p>
+              <p><i class="fa fa-address-card fa-fw w3-margin-right w3-text-theme"></i> <?php echo  $a[0] ;?></p>
               <hr>
              </div>
            </div>
@@ -309,6 +327,7 @@ if (!isset($_SESSION["utente"]))
                <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-circle-o-notch fa-fw w3-margin-right"></i>Crea Prenotazione</button>
                <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"onclick="" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i>Traccia il mio pacco</button>
                <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"onclick="" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i>Le mie prenotazioni</button>
+               <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"onclick="" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-calendar-check-o fa-fw w3-margin-right"></i>Il mio portafoglio</button>
                <!--<button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align"><i class="fa fa-users fa-fw w3-margin-right"></i>Invii</button>
                <div id="Demo3" class="w3-hide w3-container">
               <div class="w3-row-padding">

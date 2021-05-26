@@ -56,7 +56,9 @@ require 'funtion/DATABASE_FUNCTION.php';
                 $password=$_POST['password'];
 
                  if (login($nome,$email,$password)) {
-                   $_SESSION["utente"]=SQL("Select Codice_fiscale from utente where nome='".$nome."' and email='".$email."'",'Codice_fiscale');
+                   $cf=SQL("Select Codice_fiscale from utente where nome='".$nome."' and email='".$email."'",'Codice_fiscale');
+                   $_SESSION['utente']=$cf[0];
+                   echo "<script>location.assign('Profilo.php');</script>";
                  }
                  else
                  {
@@ -303,7 +305,7 @@ if (isset($_POST['sup'])) {
             if(registra($citta,$indirizzo,$ncasa,$cap,$regione,$nome,$cognome,$codice_fiscale,$eta,$email,$password,$conpassword))
             {
               echo 'va bene';
-              header('Location: index.php');
+                echo "<script>location.assign('index.php');</script>";
             }
             else{
 
